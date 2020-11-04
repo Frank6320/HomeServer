@@ -1,14 +1,14 @@
-# FHEM Docker Base
+# HomeServer
 
-This is a template for a docker based fhem installation. It contains a lot of services and is preconfigured / ready to start.
+This is the first commit of my HomeServer. Core part is FHEM.
 
 **Change all the passwords for mySQL, FHEM, NodeRed, ...**
 
 ## Contains
 
-- FHEM + haus-automatisierung.com FHEM frontend style + Tablet UI + ABFALL Module
-- MQTT (pre-configured)
-- mySQL-Logging (pre-configured)
+- FHEM
+- homebridge
+- mariadb
 - NodeRed
 
 ## Requirements
@@ -19,9 +19,7 @@ This is a template for a docker based fhem installation. It contains a lot of se
 ## Install
 
 ```
-git clone https://github.com/klein0r/fhem-docker.git fhem-docker
-cd fhem-docker
-docker-compose up -d
+blabla
 ```
 
 ## Defaults / Ports
@@ -36,7 +34,7 @@ docker-compose up -d
 - telnet: ggOCu3IAKbN0x54zN
 
 - mySQL-User: fhemuser
-- mySQL-Password: 2jRHnEi3WuNSQAcX7 (see mysql/init.sql and fhem/core/contrib/configDB/configDB.conf)
+- mySQL-Password: (see mysql/init.sql and fhem/core/contrib/configDB/configDB.conf)
 
 ## Additional Information
 
