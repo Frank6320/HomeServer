@@ -1,0 +1,123 @@
+version: '3.4'
+
+services:
+    fhem:
+        restart: always
+        ports:
+            - "8083:8083"
+            - "7072:7072"
+            - target: 3671
+              published: 3671
+              protocol: udp
+              mode: host
+            - target: 6720
+              published: 6720
+              protocol: udp
+              mode: host
+        image: fhem/fhem:latest
+        volumes:
+            - ./fhem/core/:/opt/fhem/
+        devices:
+            - /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A9077ZO9-if00-port0:/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A9077ZO9-if00-port0
+            - /dev/serial/by-id/usb-FTDI_FT230X_Basic_UART_DN05XDOZ-if00-port0:/dev/serial/by-id/usb-FTDI_FT230X_Basic_UART_DN05XDOZ-if00-port0
+            - /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0:/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+#        networks:
+#            - fhem-network
+        environment:
+            FHEM_UID: 1000
+            FHEM_GID: 1000
+            TIMEOUT: 10
+            RESTART: 1
+            TELNETPORT: 7072
+            TZ: Europe/Berlin
+        network_mode: host
+        depends_on:
+            - "mariadb"
+
+    mariadb:
+        build: ./mariadb
+        restart: always
+        network_mode: host
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_DATABASE=fhem
+            - MYSQL_USER=fhemuser
+            - MYSQL_PASSWORD=35llhcsffhadkwe6wn
+            - MYSQL_RANDOM_ROOT_PASSWORD=true
+            - MYSQL_ONETIME_PASSWORD=false
+        volumes:
+            - /home/FHEM_database:/var/lib/mysql
+            - /home/frank/HomeServer/mariadb/files/init.sql:/docker-entrypoint-initdb.d/init.sql
+#        networks:
+#            - fhem-network
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+#        networks:
+#            - fhem-network
+        network_mode: host 
+ 
+    homebridge:
+        image: oznu/homebridge:latest
+        restart: always
+        environment:
+            - PGID=1000
+            - PUID=1000
+            - HOMEBRIDGE_CONFIG_UI=1
+            - HOMEBRIDGE_CONFIG_UI_PORT=8081
+        volumes:
+            - ./homebridge:/homebridge
+        network_mode: host  
+
+    nodered:
+        restart: always
+        expose:
+            - "1880"
+        ports:
+            - "1880:1880"
+        image: nodered/node-red:1.0.3-2
+        user: "1000:1000"
+        volumes:
+            - ./nodered/data/:/data/
+#        networks:
+#            - fhem-network
+        network_mode: host            
+ 
+    knxd:
+        build: ./knxd
+        restart: always
+        network_mode: host
+        ports:
+            - target: 6720
+              published: 6720
+              protocol: udp
+              mode: host
+#        networks:
+#            - fhem-network
+        command: knxd -e 1.1.200 -E 1.1.201:4 -t 1023 -DTRS -i -u
+
+    portainer:
+        restart: always
+        image: portainer/portainer:latest
+        command: -H unix:///var/run/docker.sock --no-auth
+        ports:
+            - "9000:9000"
+        environment:
+            - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/portainer.crt
+            - REGISTRY_HTTP_TLS_KEY=/certs/portainer.key
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./portainer_data:/data
+            - /home/pirate/certs/portainer.key:/certs/portainer.key
+            - /home/pirate/certs/portainer.crt:/certs/portainer.crt
+
+
+#networks:
+#    fhem-network:
+#        driver: bridge
+#volumes:
+#    SQL_database:

@@ -1,0 +1,1273 @@
+attr global userattr DbLogExclude DbLogInclude DbLogValueFn:textField-long cmdIcon devStateIcon devStateIcon:textField-long devStateStyle genericDeviceType:security,ignore,switch,outlet,light,blind,thermometer,thermostat,contact,garage,window,lock homebridgeMapping:textField-long icon setList siriName sortby webCmd webCmdLabel:textField-long widgetOverride
+attr global autoload_undefined_devices 1
+attr global autosave 0
+attr global logfile ./log/fhem-%Y-%m-%d.log
+attr global modpath .
+attr global motd SecurityCheck:\
+  WEB is not password protected\
+  telnetPort is not password protected\
+\
+Protect this FHEM installation by defining an allowed device with define allowed allowed\
+You can disable this message with attr global motd none
+attr global nofork 0
+attr global pidfilename ./log/fhem.pid
+attr global statefile ./log/fhem.save
+attr global updateInBackground 1
+attr global verbose 5
+
+define WEB FHEMWEB 8083 global
+setuuid WEB 5dbecae6-f33f-ba42-c677-c6feea21b39236f4
+attr WEB editConfig 1
+attr WEB stylesheetPrefix default
+
+# Fake FileLog entry, to access the fhem log from FHEMWEB 
+# define Logfile FileLog ./log/fhem-%Y-%m-%d.log fakelog
+
+define autocreate autocreate
+setuuid autocreate 5dbecae7-f33f-ba42-9518-054644e73678a1bd
+# attr autocreate filelog ./log/%NAME-%Y.log
+
+define eventTypes eventTypes ./log/eventTypes.txt
+setuuid eventTypes 5dbecae7-f33f-ba42-96ab-94f6cdfb383d3c36
+
+# Disable this to avoid looking for new USB devices on startup
+# define initialUsbCheck notify global:INITIALIZED usb create
+define KNX_0105000 KNX 1/5/0:MODEL_NOT_DEFINED
+setuuid KNX_0105000 5dbecaec-f33f-ba42-a10d-5aa1902269790abf
+attr KNX_0105000 IODev knxbridge
+attr KNX_0105000 room KNX
+define Wohnzimmer.Indirekte_Beleuchtung KNX 1/3/0:dpt5.001\
+1/5/0:dpt5.001\
+1/1/28:dpt1.001\
+1/4/25:dpt1.001
+setuuid Wohnzimmer.Indirekte_Beleuchtung 5dbecaec-f33f-ba42-673a-ebc1596c6bbbd9d6
+attr Wohnzimmer.Indirekte_Beleuchtung IODev knxbridge
+attr Wohnzimmer.Indirekte_Beleuchtung alias indirekte Beleuchtung
+attr Wohnzimmer.Indirekte_Beleuchtung eventMap /on g3:on/off g3:off
+attr Wohnzimmer.Indirekte_Beleuchtung group Licht
+attr Wohnzimmer.Indirekte_Beleuchtung icon light_diffused
+attr Wohnzimmer.Indirekte_Beleuchtung room Homekit,Wohnzimmer
+attr Wohnzimmer.Indirekte_Beleuchtung webCmd g1:on:off
+attr Wohnzimmer.Indirekte_Beleuchtung widgetOverride g1:slider,0,5,100
+define Strom KNX 0/0/1:dpt9.021
+setuuid Strom 5dbecaec-f33f-ba42-729c-92814b7cc9a34e4d
+attr Strom IODev knxbridge
+attr Strom readonly 1
+attr Strom room Homekit,System
+define Spannung KNX 0/0/2:dpt9.020
+setuuid Spannung 5dbecaec-f33f-ba42-b9fc-90112ae04bf1528b
+attr Spannung IODev knxbridge
+attr Spannung readonly 1
+attr Spannung room System
+define Systemzeit KNX 0/1/0:dpt19
+setuuid Systemzeit 5dbecaec-f33f-ba42-11e2-44217da0320c1ed8
+attr Systemzeit IODev knxbridge
+attr Systemzeit room hidden
+define Treppenstufenbeleuchtung KNX 1/1/20:dpt1.001 1/4/20:dpt1.001
+setuuid Treppenstufenbeleuchtung 5dbecaec-f33f-ba42-2c05-2b4ec36da8e554c2
+attr Treppenstufenbeleuchtung IODev knxbridge
+attr Treppenstufenbeleuchtung genericDeviceType switch
+attr Treppenstufenbeleuchtung group Licht
+attr Treppenstufenbeleuchtung icon light_stairs
+attr Treppenstufenbeleuchtung room Flur EG,Flur OG,Homekit
+attr Treppenstufenbeleuchtung setList on off
+attr Treppenstufenbeleuchtung webCmd on:off
+define siri siri
+setuuid siri 5dbecaec-f33f-ba42-18c1-afc28105ec36cffa
+define Flur_EG.Licht KNX 1/1/18:dpt1.001 1/4/18:dpt1.001
+setuuid Flur_EG.Licht 5dbecaec-f33f-ba42-f5c3-2b537b5f18fe13b3
+attr Flur_EG.Licht IODev knxbridge
+attr Flur_EG.Licht alias Licht
+attr Flur_EG.Licht genericDeviceType switch
+attr Flur_EG.Licht group Licht
+attr Flur_EG.Licht room Flur EG,Homekit
+attr Flur_EG.Licht setList on off
+attr Flur_EG.Licht webCmd on:off
+define KNX_0101026 KNX 1/1/26:MODEL_NOT_DEFINED
+setuuid KNX_0101026 5dbecaec-f33f-ba42-25ec-4ba16e974bc06013
+attr KNX_0101026 IODev knxbridge
+attr KNX_0101026 room KNX
+define KNX_0101021 KNX 1/1/21:MODEL_NOT_DEFINED
+setuuid KNX_0101021 5dbecaec-f33f-ba42-2abc-3506cc165b705523
+attr KNX_0101021 IODev knxbridge
+attr KNX_0101021 room KNX
+define BadOG_Duschenlicht KNX 1/1/9:dpt1.001 1/4/9:dpt1.001
+setuuid BadOG_Duschenlicht 5dbecaec-f33f-ba42-7a14-15bb9311213ad972
+attr BadOG_Duschenlicht IODev knxbridge
+attr BadOG_Duschenlicht alias Duschenlicht
+attr BadOG_Duschenlicht genericDeviceType switch
+attr BadOG_Duschenlicht group Licht
+attr BadOG_Duschenlicht room Bad OG,Homekit
+attr BadOG_Duschenlicht setList on off
+attr BadOG_Duschenlicht webCmd on:off
+define Konstantin.Rollo_links KNX 3/4/2:dpt5.001\
+3/5/2:dpt5.001\
+3/1/3:dpt1.008\
+3/2/4:dpt1.001
+setuuid Konstantin.Rollo_links 5dbecaec-f33f-ba42-42c1-4af3d671b31b477a
+attr Konstantin.Rollo_links IODev knxbridge
+attr Konstantin.Rollo_links alias Rolladen links
+attr Konstantin.Rollo_links cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Konstantin.Rollo_links eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Konstantin.Rollo_links genericDeviceType blind
+attr Konstantin.Rollo_links group Rolladen
+attr Konstantin.Rollo_links homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Konstantin.Rollo_links room Konstantin,Homekit
+attr Konstantin.Rollo_links setList g1
+attr Konstantin.Rollo_links stateFormat getG2
+attr Konstantin.Rollo_links webCmd g1:Auf:Stopp:Ab
+attr Konstantin.Rollo_links widgetOverride g1:slider,0,5,100
+define BadOG_Licht KNX 1/1/8:dpt1.001 1/4/8:dpt1.001
+setuuid BadOG_Licht 5dbecaec-f33f-ba42-684d-707146c1d92fb825
+attr BadOG_Licht IODev knxbridge
+attr BadOG_Licht alias Deckenlicht groß
+attr BadOG_Licht genericDeviceType switch
+attr BadOG_Licht group Licht
+attr BadOG_Licht room Bad OG,Homekit
+attr BadOG_Licht setList on off
+attr BadOG_Licht webCmd on:off
+define KNX_0301002 KNX 3/1/2:MODEL_NOT_DEFINED
+setuuid KNX_0301002 5dbecaec-f33f-ba42-eac2-50528a135f6a0660
+attr KNX_0301002 IODev knxbridge
+attr KNX_0301002 room KNX
+define KNX_0305002 KNX 3/5/2:MODEL_NOT_DEFINED
+setuuid KNX_0305002 5dbecaec-f33f-ba42-6479-1776049e09be63b2
+attr KNX_0305002 IODev knxbridge
+attr KNX_0305002 room KNX
+define KNX_0301024 KNX 3/1/24:MODEL_NOT_DEFINED
+setuuid KNX_0301024 5dbecaec-f33f-ba42-b20a-7c105ff2c95ef992
+attr KNX_0301024 IODev knxbridge
+attr KNX_0301024 room KNX
+define KNX_0305010 KNX 3/5/10:MODEL_NOT_DEFINED
+setuuid KNX_0305010 5dbecaec-f33f-ba42-0d9a-5bdb019e3aea6677
+attr KNX_0305010 IODev knxbridge
+attr KNX_0305010 room KNX
+define KNX_0305012 KNX 3/5/12:MODEL_NOT_DEFINED
+setuuid KNX_0305012 5dbecaec-f33f-ba42-002a-2ef5534fba98a729
+attr KNX_0305012 IODev knxbridge
+attr KNX_0305012 room KNX
+define KNX_0305011 KNX 3/5/11:MODEL_NOT_DEFINED
+setuuid KNX_0305011 5dbecaec-f33f-ba42-67fc-99806376671c5fbf
+attr KNX_0305011 IODev knxbridge
+attr KNX_0305011 room KNX
+define KNX_0305013 KNX 3/5/13:MODEL_NOT_DEFINED
+setuuid KNX_0305013 5dbecaec-f33f-ba42-0384-ba21558a6c41de8b
+attr KNX_0305013 IODev knxbridge
+attr KNX_0305013 room KNX
+define KNX_0305014 KNX 3/5/14:MODEL_NOT_DEFINED
+setuuid KNX_0305014 5dbecaed-f33f-ba42-b1a2-c541e0966877e545
+attr KNX_0305014 IODev knxbridge
+attr KNX_0305014 room KNX
+define BadEG_Deckenlicht KNX 1/1/13:dpt1.001 1/4/13:dpt1.001
+setuuid BadEG_Deckenlicht 5dbecaed-f33f-ba42-4178-6a760c6f9e54410f
+attr BadEG_Deckenlicht IODev knxbridge
+attr BadEG_Deckenlicht alias Deckenlicht
+attr BadEG_Deckenlicht genericDeviceType switch
+attr BadEG_Deckenlicht group Licht
+attr BadEG_Deckenlicht icon light_ceiling
+attr BadEG_Deckenlicht room Bad EG,Homekit
+attr BadEG_Deckenlicht setList on off
+attr BadEG_Deckenlicht webCmd on:off
+define KNX_0302000 KNX 3/2/0:MODEL_NOT_DEFINED
+setuuid KNX_0302000 5dbecaed-f33f-ba42-b27f-8758e85d0cf0b64d
+attr KNX_0302000 IODev knxbridge
+attr KNX_0302000 room KNX
+define KNX_0305000 KNX 3/5/0:MODEL_NOT_DEFINED
+setuuid KNX_0305000 5dbecaed-f33f-ba42-0ac9-a0bad1c728dd3d99
+attr KNX_0305000 IODev knxbridge
+attr KNX_0305000 room KNX
+define KNX_0301001 KNX 3/1/1:MODEL_NOT_DEFINED
+setuuid KNX_0301001 5dbecaed-f33f-ba42-fa96-0ef2d1bc83b47632
+attr KNX_0301001 IODev knxbridge
+attr KNX_0301001 room KNX
+define KNX_0305001 KNX 3/5/1:MODEL_NOT_DEFINED
+setuuid KNX_0305001 5dbecaed-f33f-ba42-7f61-123e6c85890f7e54
+attr KNX_0305001 IODev knxbridge
+attr KNX_0305001 room KNX
+define Schlafzimmer.Rollo_links KNX 3/4/0:dpt5.001\
+3/5/0:dpt5.001\
+3/1/0:dpt1.008\
+3/2/0:dpt1.001
+setuuid Schlafzimmer.Rollo_links 5dbecaed-f33f-ba42-4662-f78c1bd6bcbd1602
+attr Schlafzimmer.Rollo_links IODev knxbridge
+attr Schlafzimmer.Rollo_links alias Rolladen links
+attr Schlafzimmer.Rollo_links cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Schlafzimmer.Rollo_links eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Schlafzimmer.Rollo_links genericDeviceType blind
+attr Schlafzimmer.Rollo_links group Rolladen,
+attr Schlafzimmer.Rollo_links homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Schlafzimmer.Rollo_links room Schlafzimmer,Homekit
+attr Schlafzimmer.Rollo_links setList g1
+attr Schlafzimmer.Rollo_links stateFormat getG2
+attr Schlafzimmer.Rollo_links webCmd g1:Auf:Stopp:Ab
+attr Schlafzimmer.Rollo_links widgetOverride g1:slider,0,5,100
+define Schlafzimmer.Rollo_rechts KNX 3/4/1:dpt5.001\
+3/5/1:dpt5.001\
+3/1/1:dpt1.008\
+3/2/1:dpt1.001
+setuuid Schlafzimmer.Rollo_rechts 5dd46322-f33f-ba42-de6f-6ac971e99abd8a24
+attr Schlafzimmer.Rollo_rechts IODev knxbridge
+attr Schlafzimmer.Rollo_rechts alias Rolladen rechts
+attr Schlafzimmer.Rollo_rechts cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Schlafzimmer.Rollo_rechts eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Schlafzimmer.Rollo_rechts genericDeviceType blind
+attr Schlafzimmer.Rollo_rechts group Rolladen,
+attr Schlafzimmer.Rollo_rechts homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Schlafzimmer.Rollo_rechts room Schlafzimmer,Homekit
+attr Schlafzimmer.Rollo_rechts setList g1
+attr Schlafzimmer.Rollo_rechts stateFormat getG2
+attr Schlafzimmer.Rollo_rechts webCmd g1:Auf:Stopp:Ab
+attr Schlafzimmer.Rollo_rechts widgetOverride g1:slider,0,5,100
+define KNX_0302001 KNX 3/2/1:MODEL_NOT_DEFINED
+setuuid KNX_0302001 5dbecaed-f33f-ba42-05ff-a01bc266769f644b
+attr KNX_0302001 IODev knxbridge
+attr KNX_0302001 room KNX
+define KNX_0301009 KNX 3/1/9:MODEL_NOT_DEFINED
+setuuid KNX_0301009 5dbecaed-f33f-ba42-e575-0bc4d96ac41f699f
+attr KNX_0301009 IODev knxbridge
+attr KNX_0301009 room KNX
+define KNX_0302009 KNX 3/2/9:MODEL_NOT_DEFINED
+setuuid KNX_0302009 5dbecaed-f33f-ba42-3594-3668d067ac037d38
+attr KNX_0302009 IODev knxbridge
+attr KNX_0302009 room KNX
+define KNX_0305009 KNX 3/5/9:MODEL_NOT_DEFINED
+setuuid KNX_0305009 5dbecaed-f33f-ba42-bff1-4e12043d5ea4681b
+attr KNX_0305009 IODev knxbridge
+attr KNX_0305009 room KNX
+define Ankleidezimme_Steckdose KNX 1/1/2:dpt1.001 1/4/2:dpt1.001
+setuuid Ankleidezimme_Steckdose 5dbecaed-f33f-ba42-04cd-41efa933fcfc88d7
+attr Ankleidezimme_Steckdose IODev knxbridge
+attr Ankleidezimme_Steckdose alias Steckdose
+attr Ankleidezimme_Steckdose genericDeviceType switch
+attr Ankleidezimme_Steckdose group Licht
+attr Ankleidezimme_Steckdose room Ankleidezimmer,Homekit
+attr Ankleidezimme_Steckdose setList on off
+attr Ankleidezimme_Steckdose siriName Licht
+attr Ankleidezimme_Steckdose webCmd on:off
+define KNX_0302024 KNX 3/2/24:MODEL_NOT_DEFINED
+setuuid KNX_0302024 5dbecaed-f33f-ba42-0674-bcf90a33c10ebce5
+attr KNX_0302024 IODev knxbridge
+attr KNX_0302024 room KNX
+define Wohnzimmer.Esstisch KNX 1/1/15:dpt1.001 1/4/15:dpt1.001
+setuuid Wohnzimmer.Esstisch 5dbecaed-f33f-ba42-0555-f17322abd429f458
+attr Wohnzimmer.Esstisch IODev knxbridge
+attr Wohnzimmer.Esstisch genericDeviceType switch
+attr Wohnzimmer.Esstisch group Licht
+attr Wohnzimmer.Esstisch icon light_pendant_light
+attr Wohnzimmer.Esstisch room Homekit,Wohnzimmer
+attr Wohnzimmer.Esstisch setList on off
+attr Wohnzimmer.Esstisch webCmd on:off
+define Kueche.Esstisch KNX 1/1/17:dpt1.001 1/4/17:dpt1.001
+setuuid Kueche.Esstisch 5dbecaed-f33f-ba42-736b-4d8b50e8595ad63a
+attr Kueche.Esstisch IODev knxbridge
+attr Kueche.Esstisch alias Esstisch
+attr Kueche.Esstisch genericDeviceType switch
+attr Kueche.Esstisch group Licht
+attr Kueche.Esstisch icon light_pendant_light_round
+attr Kueche.Esstisch room Küche,Homekit
+attr Kueche.Esstisch setList on off
+attr Kueche.Esstisch webCmd on:off
+define KNX_0301016 KNX 3/1/16:MODEL_NOT_DEFINED
+setuuid KNX_0301016 5dbecaed-f33f-ba42-d265-66365e63c567d01b
+attr KNX_0301016 IODev knxbridge
+attr KNX_0301016 room KNX
+define KNX_0301017 KNX 3/1/17:MODEL_NOT_DEFINED
+setuuid KNX_0301017 5dbecaed-f33f-ba42-fff1-3e144d705cb84fe9
+attr KNX_0301017 IODev knxbridge
+attr KNX_0301017 room KNX
+define KNX_0301018 KNX 3/1/18:MODEL_NOT_DEFINED
+setuuid KNX_0301018 5dbecaed-f33f-ba42-7b1c-78f78ab114b3b36d
+attr KNX_0301018 IODev knxbridge
+attr KNX_0301018 room KNX
+define KNX_0302025 KNX 3/2/25:MODEL_NOT_DEFINED
+setuuid KNX_0302025 5dbecaed-f33f-ba42-5ca4-9d843e417b91895d
+attr KNX_0302025 IODev knxbridge
+attr KNX_0302025 room KNX
+define KNX_0305016 KNX 3/5/16:MODEL_NOT_DEFINED
+setuuid KNX_0305016 5dbecaed-f33f-ba42-46f6-1563599b8441d13a
+attr KNX_0305016 IODev knxbridge
+attr KNX_0305016 room KNX
+define KNX_0305017 KNX 3/5/17:MODEL_NOT_DEFINED
+setuuid KNX_0305017 5dbecaed-f33f-ba42-9ab1-1a8a83ffbfc16e88
+attr KNX_0305017 IODev knxbridge
+attr KNX_0305017 room KNX
+define KNX_0305018 KNX 3/5/18:MODEL_NOT_DEFINED
+setuuid KNX_0305018 5dbecaed-f33f-ba42-eae4-b8b47fd86477065d
+attr KNX_0305018 IODev knxbridge
+attr KNX_0305018 room KNX
+define Schlafzimmer.Deckenlicht KNX 1/1/4:dpt1.001 1/4/4:dpt1.001
+setuuid Schlafzimmer.Deckenlicht 5dbecaed-f33f-ba42-abd2-de13d78bb18d2e42
+attr Schlafzimmer.Deckenlicht IODev knxbridge
+attr Schlafzimmer.Deckenlicht alias Licht
+attr Schlafzimmer.Deckenlicht genericDeviceType switch
+attr Schlafzimmer.Deckenlicht group Licht
+attr Schlafzimmer.Deckenlicht room Homekit,Schlafzimmer
+attr Schlafzimmer.Deckenlicht setList on off
+attr Schlafzimmer.Deckenlicht webCmd on:off
+define KNX_0102028 KNX 1/2/28:MODEL_NOT_DEFINED
+setuuid KNX_0102028 5dbecaed-f33f-ba42-e469-c20010cce7eef1ed
+attr KNX_0102028 IODev knxbridge
+attr KNX_0102028 room KNX
+define BadOG_Ambientelicht KNX 1/1/10:dpt1.001 1/4/10:dpt1.001
+setuuid BadOG_Ambientelicht 5dbecaed-f33f-ba42-276c-01f83d17c6eaffbc
+attr BadOG_Ambientelicht IODev knxbridge
+attr BadOG_Ambientelicht alias Ambientelicht
+attr BadOG_Ambientelicht genericDeviceType switch
+attr BadOG_Ambientelicht group Licht
+attr BadOG_Ambientelicht room Bad OG,Homekit
+attr BadOG_Ambientelicht setList on off
+attr BadOG_Ambientelicht siriName Bad oben Abientelicht
+attr BadOG_Ambientelicht webCmd on:off
+define Kueche.Spots_Herd KNX 1/1/25:dpt1.001 1/4/23:dpt1.001
+setuuid Kueche.Spots_Herd 5dbecaed-f33f-ba42-9aec-0f67e45e3ba7aa9f
+attr Kueche.Spots_Herd IODev knxbridge
+attr Kueche.Spots_Herd alias Spots über Herd
+attr Kueche.Spots_Herd genericDeviceType switch
+attr Kueche.Spots_Herd group Licht
+attr Kueche.Spots_Herd icon light_ceiling
+attr Kueche.Spots_Herd room Homekit,Küche
+attr Kueche.Spots_Herd setList on off
+attr Kueche.Spots_Herd webCmd on:off
+define Kueche.Vitrine KNX 1/1/27:dpt1.001 1/4/27:dpt1.001
+setuuid Kueche.Vitrine 5dbecaed-f33f-ba42-5a1e-dec493a3e036946b
+attr Kueche.Vitrine IODev knxbridge
+attr Kueche.Vitrine alias Vitrine
+attr Kueche.Vitrine genericDeviceType switch
+attr Kueche.Vitrine group Licht
+attr Kueche.Vitrine icon light_cabinet
+attr Kueche.Vitrine room Homekit,Küche
+attr Kueche.Vitrine setList on off
+attr Kueche.Vitrine webCmd on:off
+define KNX_0301015 KNX 3/1/15:MODEL_NOT_DEFINED
+setuuid KNX_0301015 5dbecaed-f33f-ba42-9ba6-e9c9c86eb007afc8
+attr KNX_0301015 IODev knxbridge
+attr KNX_0301015 room KNX
+define KNX_0305015 KNX 3/5/15:MODEL_NOT_DEFINED
+setuuid KNX_0305015 5dbecaed-f33f-ba42-aaa4-05d1576d76357c2e
+attr KNX_0305015 IODev knxbridge
+attr KNX_0305015 room KNX
+define Flur_OG.Licht KNX 1/1/0:dpt1.001 1/4/0:dpt1.001
+setuuid Flur_OG.Licht 5dbecaed-f33f-ba42-c0d8-f6da8fbca24a9c74
+attr Flur_OG.Licht IODev knxbridge
+attr Flur_OG.Licht alias Deckenlicht
+attr Flur_OG.Licht genericDeviceType switch
+attr Flur_OG.Licht group Licht
+attr Flur_OG.Licht room Flur OG,Homekit
+attr Flur_OG.Licht setList on off
+attr Flur_OG.Licht webCmd on:off
+define Ankleidezimmer_Licht KNX 1/1/3:dpt1.001 1/4/3:dpt1.001
+setuuid Ankleidezimmer_Licht 5dbecaed-f33f-ba42-53de-2bf73dd6d6c057f6
+attr Ankleidezimmer_Licht IODev knxbridge
+attr Ankleidezimmer_Licht alias Licht
+attr Ankleidezimmer_Licht genericDeviceType switch
+attr Ankleidezimmer_Licht group Licht
+attr Ankleidezimmer_Licht room Ankleidezimmer,Homekit
+attr Ankleidezimmer_Licht setList on off
+attr Ankleidezimmer_Licht siriName Licht
+attr Ankleidezimmer_Licht webCmd on:off
+define Valentin.Licht KNX 1/1/6:dpt1.001 1/4/6:dpt1.001
+setuuid Valentin.Licht 5dbecaed-f33f-ba42-0cf8-c8459650ea202f9e
+attr Valentin.Licht IODev knxbridge
+attr Valentin.Licht alias Deckenlicht
+attr Valentin.Licht genericDeviceType switch
+attr Valentin.Licht group Licht
+attr Valentin.Licht room Homekit,Valentin
+attr Valentin.Licht setList on off
+attr Valentin.Licht webCmd on:off
+define KNX_0301003 KNX 3/1/3:MODEL_NOT_DEFINED
+setuuid KNX_0301003 5dbecaed-f33f-ba42-b4e2-4bec8492f009fe94
+attr KNX_0301003 IODev knxbridge
+attr KNX_0301003 room KNX
+define KNX_0302021 KNX 3/2/21:MODEL_NOT_DEFINED
+setuuid KNX_0302021 5dbecaed-f33f-ba42-356c-8843bf6e7eff0f44
+attr KNX_0302021 IODev knxbridge
+attr KNX_0302021 room KNX
+define Konstantin.Licht KNX 1/1/5:dpt1:001 1/4/5:dpt1.001
+setuuid Konstantin.Licht 5dbecaed-f33f-ba42-ac71-ef2a0fec6a3cddbb
+attr Konstantin.Licht IODev knxbridge
+attr Konstantin.Licht alias Deckenlicht
+attr Konstantin.Licht genericDeviceType switch
+attr Konstantin.Licht group Licht
+attr Konstantin.Licht room Homekit,Konstantin
+attr Konstantin.Licht setList on off
+attr Konstantin.Licht webCmd on:off
+define Arbeitszimmer_Licht KNX 1/1/12:dpt1.001 1/4/12:dpt1.001
+setuuid Arbeitszimmer_Licht 5dbecaed-f33f-ba42-9ffd-8119556281565c43
+attr Arbeitszimmer_Licht IODev knxbridge
+attr Arbeitszimmer_Licht alias Licht
+attr Arbeitszimmer_Licht genericDeviceType switch
+attr Arbeitszimmer_Licht group Licht
+attr Arbeitszimmer_Licht room Arbeitszimmer,Homekit
+attr Arbeitszimmer_Licht setList on off
+attr Arbeitszimmer_Licht webCmd on:off
+define KNX_0301010 KNX 3/1/10:MODEL_NOT_DEFINED
+setuuid KNX_0301010 5dbecaed-f33f-ba42-8934-0a135ff500fd9c2a
+attr KNX_0301010 IODev knxbridge
+attr KNX_0301010 room KNX
+define KNX_0301011 KNX 3/1/11:MODEL_NOT_DEFINED
+setuuid KNX_0301011 5dbecaed-f33f-ba42-7f53-70862fed3393e70f
+attr KNX_0301011 IODev knxbridge
+attr KNX_0301011 room KNX
+define Arbeitszimmer_Rollo_links KNX 3/4/7:dpt5.001\
+3/5/7:dpt5.001\
+3/1/7:dpt1.008\
+3/2/7:dpt1.001
+setuuid Arbeitszimmer_Rollo_links 5dbecaed-f33f-ba42-dc42-6201c0cb71d7a9a1
+attr Arbeitszimmer_Rollo_links IODev knxbridge
+attr Arbeitszimmer_Rollo_links alias Rolladen links
+attr Arbeitszimmer_Rollo_links cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Arbeitszimmer_Rollo_links eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Arbeitszimmer_Rollo_links genericDeviceType blind
+attr Arbeitszimmer_Rollo_links group Rolladen
+attr Arbeitszimmer_Rollo_links homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Arbeitszimmer_Rollo_links icon fts_window_2w
+attr Arbeitszimmer_Rollo_links room Arbeitszimmer,Homekit
+attr Arbeitszimmer_Rollo_links setList g1
+attr Arbeitszimmer_Rollo_links stateFormat getG2
+attr Arbeitszimmer_Rollo_links webCmd g1:Auf:Stopp:Ab
+attr Arbeitszimmer_Rollo_links widgetOverride g1:slider,0,5,100
+define KNX_0301007 KNX 3/1/7:MODEL_NOT_DEFINED
+setuuid KNX_0301007 5dbecaed-f33f-ba42-2235-31f2cfae58f7a002
+attr KNX_0301007 IODev knxbridge
+attr KNX_0301007 room KNX
+define KNX_0301006 KNX 3/1/6:MODEL_NOT_DEFINED
+setuuid KNX_0301006 5dbecaed-f33f-ba42-857e-96b8075a3c987f68
+attr KNX_0301006 IODev knxbridge
+attr KNX_0301006 room KNX
+define KNX_0302006 KNX 3/2/6:MODEL_NOT_DEFINED
+setuuid KNX_0302006 5dbecaed-f33f-ba42-7584-ffd8b839a1999ace
+attr KNX_0302006 IODev knxbridge
+attr KNX_0302006 room KNX
+define KNX_0301005 KNX 3/1/5:MODEL_NOT_DEFINED
+setuuid KNX_0301005 5dbecaed-f33f-ba42-d50c-4e23eefe5c235aef
+attr KNX_0301005 IODev knxbridge
+attr KNX_0301005 room KNX
+define KNX_0305003 KNX 3/5/3:MODEL_NOT_DEFINED
+setuuid KNX_0305003 5dbecaed-f33f-ba42-6ac4-24e2ebdb777e911f
+attr KNX_0305003 IODev knxbridge
+attr KNX_0305003 room KNX
+define KNX_0105028 KNX 1/5/28:MODEL_NOT_DEFINED
+setuuid KNX_0105028 5dbecaf0-f33f-ba42-8d12-f6da8c525fb2e98a
+attr KNX_0105028 IODev knxbridge
+attr KNX_0105028 room KNX
+define KNX_0103028 KNX 1/3/28:MODEL_NOT_DEFINED
+setuuid KNX_0103028 5dbecaf0-f33f-ba42-a1ee-c8117f0a18326dcb
+attr KNX_0103028 IODev knxbridge
+attr KNX_0103028 room KNX
+define BadEG_Spiegellicht KNX 1/1/14:dpt1.001 1/4/14:dpt1.001
+setuuid BadEG_Spiegellicht 5dbecaf0-f33f-ba42-6a45-51f173acd6312eb2
+attr BadEG_Spiegellicht IODev knxbridge
+attr BadEG_Spiegellicht alias Spiegellicht
+attr BadEG_Spiegellicht genericDeviceType switch
+attr BadEG_Spiegellicht group Licht
+attr BadEG_Spiegellicht icon light_wall_1
+attr BadEG_Spiegellicht room Bad EG,Homekit
+attr BadEG_Spiegellicht setList on off
+attr BadEG_Spiegellicht webCmd on:off
+define Gaestezimmer.Licht KNX 1/1/7:dpt1.001 1/4/7:dpt1.001
+setuuid Gaestezimmer.Licht 5dbecaf0-f33f-ba42-66e9-4d090a88cc6679c3
+attr Gaestezimmer.Licht IODev knxbridge
+attr Gaestezimmer.Licht alias Licht
+attr Gaestezimmer.Licht devStateIcon .*:light_pendant_light
+attr Gaestezimmer.Licht genericDeviceType switch
+attr Gaestezimmer.Licht group Licht
+attr Gaestezimmer.Licht room Gästezimmer,Homekit
+attr Gaestezimmer.Licht setList on off
+attr Gaestezimmer.Licht webCmd on:off
+define KNX_Buslast SVG DBLogging:KNX_Buslast:HISTORY
+setuuid KNX_Buslast 5dbecaf0-f33f-ba42-1ae4-ea4240c933ec2ac6
+attr KNX_Buslast room System
+define LWZ_GesamtVerbrauch dummy
+setuuid LWZ_GesamtVerbrauch 5dbed95b-f33f-ba42-f407-89fde0ca294d22eb
+attr LWZ_GesamtVerbrauch group Strom
+attr LWZ_GesamtVerbrauch room System
+attr LWZ_GesamtVerbrauch stateFormat {sprintf(\
+"%.1f kWh - %.2f €",\
+ReadingsVal("LWZ_Zaehler", "total_consumption",0)/1000,\
+(ReadingsVal("LWZ_Zaehler", "total_consumption_Ch1",0)/1000*0.2261+\
+ReadingsVal("LWZ_Zaehler", "total_consumption_Ch2",0)/1000*0.1927+12*5.95))}
+attr LWZ_GesamtVerbrauch userReadings Verbrauch monotonic {ReadingsVal("LWZ_GesamtVerbrauch","Tagesverbrauch",0)},Kosten {ReadingsVal("LWZ_GesamtVerbrauch","Verbrauch",0)*0.2261}
+define KNX_0301022 KNX 3/1/22:MODEL_NOT_DEFINED
+setuuid KNX_0301022 5dbf0cc6-f33f-ba42-b437-67084f94ea9d6016
+attr KNX_0301022 IODev knxbridge
+attr KNX_0301022 room KNX
+define KNX_0305005 KNX 3/5/5:MODEL_NOT_DEFINED
+setuuid KNX_0305005 5dbf0cf5-f33f-ba42-cccf-5aa2b2a5ced32a5b
+attr KNX_0305005 IODev knxbridge
+attr KNX_0305005 room KNX
+define KNX_0305006 KNX 3/5/6:MODEL_NOT_DEFINED
+setuuid KNX_0305006 5dbf0cf5-f33f-ba42-8fb9-a3c69174068e5e1b
+attr KNX_0305006 IODev knxbridge
+attr KNX_0305006 room KNX
+define test dummy
+setuuid test 5dbf2ad6-f33f-ba42-ab3a-05ddfb97d6d35823
+attr test room Homekit,System
+attr test stateFormat {(split ' ',ReadingsVal("LWZ","sGlobal",0))[89]}
+define LWZStromKostenTag dummy
+setuuid LWZStromKostenTag 5dbf3fd3-f33f-ba42-bdc7-5b39aa7e7a58f86d
+attr LWZStromKostenTag group Strom
+attr LWZStromKostenTag room System
+attr LWZStromKostenTag stateFormat {\
+my ($sec,$min,$hour,$mday,$month,$year,$wday,$yday,$isdst) =\
+        localtime(gettimeofday());;\
+  $month++;; $year+=1900;;\
+  my $today = sprintf('%04d-%02d-%02d', $year,$month,$mday);;\
+sprintf(\
+"%.2f €",(\
+(ReadingsVal("LWZ_Zaehler","total_consumption_Ch1",0)-DbReadingsVal("Rep.Agent","LWZ_Zaehler:total_consumption_Ch1",$today."_00:00:00",0))/1000*0.2261\
++\
+(ReadingsVal("LWZ_Zaehler","total_consumption_Ch2",0)-DbReadingsVal("Rep.Agent","LWZ_Zaehler:total_consumption_Ch2",$today."_00:00:00",0))/1000*0.1927\
+)+5.95*12/365)\
+}
+define KNX_0302003 KNX 3/2/3:MODEL_NOT_DEFINED
+setuuid KNX_0302003 5dc040f5-f33f-ba42-6de3-4156883f350844ef
+attr KNX_0302003 IODev knxbridge
+attr KNX_0302003 room KNX
+define KNX_0301012 KNX 3/1/12:MODEL_NOT_DEFINED
+setuuid KNX_0301012 5dc14c3c-f33f-ba42-d327-08538ebe36fc9859
+attr KNX_0301012 IODev knxbridge
+attr KNX_0301012 room KNX
+define KNX_0301014 KNX 3/1/14:MODEL_NOT_DEFINED
+setuuid KNX_0301014 5dc14c41-f33f-ba42-ba76-6085fc4b6f8a0bc4
+attr KNX_0301014 IODev knxbridge
+attr KNX_0301014 room KNX
+define KNX_0301013 KNX 3/1/13:MODEL_NOT_DEFINED
+setuuid KNX_0301013 5dc14c44-f33f-ba42-110e-65bea9f7ce82984b
+attr KNX_0301013 IODev knxbridge
+attr KNX_0301013 room KNX
+define Aussen_Terasse_Licht2 KNX 1/1/52:dpt1.001 1/4/52:dpt1.001
+setuuid Aussen_Terasse_Licht2 5dc30f31-f33f-ba42-a6f1-9c75503dc6283fa3
+attr Aussen_Terasse_Licht2 IODev knxbridge
+attr Aussen_Terasse_Licht2 alias Terassenlicht 2
+attr Aussen_Terasse_Licht2 genericDeviceType switch
+attr Aussen_Terasse_Licht2 group Licht
+attr Aussen_Terasse_Licht2 room Außen,Homekit
+attr Aussen_Terasse_Licht2 setList on off
+attr Aussen_Terasse_Licht2 webCmd on:off
+define Aussen_Terassensteckdose KNX 2/1/1:dpt1.001 2/2/1:dpt1.001
+setuuid Aussen_Terassensteckdose 5dc30f3a-f33f-ba42-b590-6dfc2f8ac817ff2c
+attr Aussen_Terassensteckdose IODev knxbridge
+attr Aussen_Terassensteckdose alias Steckdose Terasse
+attr Aussen_Terassensteckdose genericDeviceType switch
+attr Aussen_Terassensteckdose group Steckdose
+attr Aussen_Terassensteckdose room Außen,Homekit
+attr Aussen_Terassensteckdose setList on off
+attr Aussen_Terassensteckdose webCmd on:off
+define KNX_0202001 KNX 2/2/1:MODEL_NOT_DEFINED
+setuuid KNX_0202001 5dc30f3a-f33f-ba42-fb43-3512204cff87966c
+attr KNX_0202001 IODev knxbridge
+attr KNX_0202001 room KNX
+define Aussen_Terassenlicht11 KNX 1/1/51:dpt1.001 1/4/51:dpt1.001
+setuuid Aussen_Terassenlicht11 5dc30f3c-f33f-ba42-dba0-f54b1b8e0d29fa5f
+attr Aussen_Terassenlicht11 IODev knxbridge
+attr Aussen_Terassenlicht11 alias Terassenlicht 1
+attr Aussen_Terassenlicht11 genericDeviceType switch
+attr Aussen_Terassenlicht11 group Licht
+attr Aussen_Terassenlicht11 room Außen,Homekit
+attr Aussen_Terassenlicht11 setList on off
+attr Aussen_Terassenlicht11 webCmd on:off
+define Aussen_Terassenlicht3 KNX 1/1/53:dpt1.001 1/4/53:dpt1.001
+setuuid Aussen_Terassenlicht3 5dc30f3e-f33f-ba42-a6ac-2d2067caf8a46181
+attr Aussen_Terassenlicht3 IODev knxbridge
+attr Aussen_Terassenlicht3 alias Terassenlicht 3
+attr Aussen_Terassenlicht3 genericDeviceType switch
+attr Aussen_Terassenlicht3 group Licht
+attr Aussen_Terassenlicht3 room Außen,Homekit
+attr Aussen_Terassenlicht3 setList on off
+attr Aussen_Terassenlicht3 webCmd on:off
+define Aussen_Haustuerbeleuchtung KNX 1/1/50:dpt1.001 1/4/50:dpt1.001
+setuuid Aussen_Haustuerbeleuchtung 5dc484ef-f33f-ba42-32c9-fcced1d2d4e8ac17
+attr Aussen_Haustuerbeleuchtung IODev knxbridge
+attr Aussen_Haustuerbeleuchtung alias Vordach
+attr Aussen_Haustuerbeleuchtung genericDeviceType switch
+attr Aussen_Haustuerbeleuchtung group Licht
+attr Aussen_Haustuerbeleuchtung room Außen,Homekit
+attr Aussen_Haustuerbeleuchtung setList on off
+attr Aussen_Haustuerbeleuchtung webCmd on:off
+define Kueche.Spuele KNX 1/1/16:dpt1.001 1/4/16:dpt1.001
+setuuid Kueche.Spuele 5dc4f74d-f33f-ba42-f7fc-974f5966cf0cec3a
+attr Kueche.Spuele IODev knxbridge
+attr Kueche.Spuele alias Spots über Spüle
+attr Kueche.Spuele genericDeviceType switch
+attr Kueche.Spuele group Licht
+attr Kueche.Spuele icon light_ceiling
+attr Kueche.Spuele room Homekit,Küche
+attr Kueche.Spuele setList on off
+attr Kueche.Spuele webCmd on:off
+define KNX_0305004 KNX 3/5/4:MODEL_NOT_DEFINED
+setuuid KNX_0305004 5dc6a7a4-f33f-ba42-2027-1bb4cf063df44766
+attr KNX_0305004 IODev knxbridge
+attr KNX_0305004 room KNX
+define KNX_0002000 KNX 0/2/0:MODEL_NOT_DEFINED
+setuuid KNX_0002000 5dc6a7f2-f33f-ba42-bc79-8bedb9f82ad5a7c4
+attr KNX_0002000 IODev knxbridge
+attr KNX_0002000 room KNX
+define Datum KNX 0/1/1:dpt11
+setuuid Datum 5dc6a998-f33f-ba42-3dab-087ab12e8a137513
+attr Datum IODev knxbridge
+attr Datum room System
+define KNX_0101025 KNX 1/1/25:MODEL_NOT_DEFINED
+setuuid KNX_0101025 5dc832e8-f33f-ba42-d5d0-7047248596d343ae
+attr KNX_0101025 IODev knxbridge
+attr KNX_0101025 room KNX
+define KNX_0302022 KNX 3/2/22:MODEL_NOT_DEFINED
+setuuid KNX_0302022 5dc83927-f33f-ba42-18a7-10246c58096be395
+attr KNX_0302022 IODev knxbridge
+attr KNX_0302022 room KNX
+define Ankleidezimmer_Heizung KNX 4/0/0:dpt9.001:Ist-Wert\
+4/1/0:dpt9.001:Soll-Wert \
+4/3/0:dpt1.007:Soll-Wert-Verschiebung\
+4/2/0:dpt5.001:Leistung
+setuuid Ankleidezimmer_Heizung 5dc87bd5-f33f-ba42-9cde-3db87785673e3660
+attr Ankleidezimmer_Heizung IODev knxbridge
+attr Ankleidezimmer_Heizung alias Heizung
+attr Ankleidezimmer_Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr Ankleidezimmer_Heizung eventMap /on g3:Auf/off g3:Ab
+attr Ankleidezimmer_Heizung group Heizung
+attr Ankleidezimmer_Heizung icon temp_control
+attr Ankleidezimmer_Heizung readonly 1
+attr Ankleidezimmer_Heizung room Ankleidezimmer
+attr Ankleidezimmer_Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr Ankleidezimmer_Heizung webCmd Auf:Ab
+define Schafzimmer.Heizung KNX 4/0/1:dpt9.001:Ist-Wert\
+4/1/1:dpt9.001:Soll-Wert \
+4/3/1:dpt1.007:Soll-Wert-Verschiebung\
+4/2/1:dpt5.001:Leistung
+setuuid Schafzimmer.Heizung 5dc87c22-f33f-ba42-4f5f-49654324a3f6bb92
+attr Schafzimmer.Heizung IODev knxbridge
+attr Schafzimmer.Heizung alias Heizung
+attr Schafzimmer.Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr Schafzimmer.Heizung eventMap /on g3:Auf/off g3:Ab
+attr Schafzimmer.Heizung group Heizung
+attr Schafzimmer.Heizung icon temp_control
+attr Schafzimmer.Heizung room Schlafzimmer
+attr Schafzimmer.Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr Schafzimmer.Heizung webCmd Auf:Ab
+define Konstantin.Heizung KNX 4/0/2:dpt9.001:Ist-Wert\
+4/1/2:dpt9.001:Soll-Wert \
+4/3/2:dpt1.007:Soll-Wert-Verschiebung\
+4/2/2:dpt5.001:Leistung
+setuuid Konstantin.Heizung 5dc87c95-f33f-ba42-9f38-8757cf5003f28d62
+attr Konstantin.Heizung IODev knxbridge
+attr Konstantin.Heizung alias Heizung
+attr Konstantin.Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr Konstantin.Heizung eventMap /on g3:Auf/off g3:Ab
+attr Konstantin.Heizung group Heizung
+attr Konstantin.Heizung icon temp_control
+attr Konstantin.Heizung room Konstantin
+attr Konstantin.Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr Konstantin.Heizung webCmd Auf:Ab
+define Valentin.Heizung KNX 4/0/3:dpt9.001:Ist-Wert\
+4/1/3:dpt9.001:Soll-Wert \
+4/3/3:dpt1.007:Soll-Wert-Verschiebung\
+4/2/3:dpt5.001:Leistung
+setuuid Valentin.Heizung 5dc87d41-f33f-ba42-23ff-4de0f54d8c901b07
+attr Valentin.Heizung IODev knxbridge
+attr Valentin.Heizung alias Heizung
+attr Valentin.Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr Valentin.Heizung eventMap /on g3:Auf/off g3:Ab
+attr Valentin.Heizung group Heizung
+attr Valentin.Heizung icon temp_control
+attr Valentin.Heizung room Valentin
+attr Valentin.Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr Valentin.Heizung webCmd Auf:Ab
+define Gaestezimmer.Heizung KNX 4/0/4:dpt9.001:Ist-Wert\
+4/1/4:dpt9.001:Soll-Wert \
+4/3/4:dpt1.007:Soll-Wert-Verschiebung\
+4/2/4:dpt5.001:Leistung
+setuuid Gaestezimmer.Heizung 5dc87da1-f33f-ba42-792f-0fd62235f5b83dce
+attr Gaestezimmer.Heizung IODev knxbridge
+attr Gaestezimmer.Heizung alias Heizung
+attr Gaestezimmer.Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr Gaestezimmer.Heizung eventMap /on g3:Auf/off g3:Ab
+attr Gaestezimmer.Heizung group Heizung
+attr Gaestezimmer.Heizung icon temp_control
+attr Gaestezimmer.Heizung room Gästezimmer
+attr Gaestezimmer.Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr Gaestezimmer.Heizung webCmd Auf:Ab
+define Flur_OG.Heizung KNX 4/0/6:dpt9.001
+setuuid Flur_OG.Heizung 5dc87e7b-f33f-ba42-497d-d4bead89f967b207
+attr Flur_OG.Heizung IODev knxbridge
+attr Flur_OG.Heizung alias Temperatur
+attr Flur_OG.Heizung group Temperatur
+attr Flur_OG.Heizung room Flur OG
+define BadOG_Heizung KNX 4/0/5:dpt9.001:Ist-Wert\
+4/1/5:dpt9.001:Soll-Wert \
+4/3/5:dpt1.007:Soll-Wert-Verschiebung\
+4/2/5:dpt5.001:Leistung
+setuuid BadOG_Heizung 5dc87edb-f33f-ba42-a9c2-bb432b278933ff83
+attr BadOG_Heizung IODev knxbridge
+attr BadOG_Heizung alias Heizung
+attr BadOG_Heizung cmdIcon Auf:control_plus Ab:control_minus
+attr BadOG_Heizung eventMap /on g3:Auf/off g3:Ab
+attr BadOG_Heizung group Heizung
+attr BadOG_Heizung icon temp_control
+attr BadOG_Heizung room Bad OG
+attr BadOG_Heizung stateFormat {'Ist: ' . ReadingsVal($name,'Ist-Wert-get','').\
+' Soll: ' . ReadingsVal($name,'Soll-Wert-get','').\
+' Leistung: ' . ReadingsVal($name,'Leistung-get','')}
+attr BadOG_Heizung webCmd Auf:Ab
+define KNX_0400004 KNX 4/0/4:MODEL_NOT_DEFINED
+setuuid KNX_0400004 5dc9da07-f33f-ba42-21e2-44f51ebe84efedf7
+attr KNX_0400004 IODev knxbridge
+attr KNX_0400004 room KNX
+define KNX_0302002 KNX 3/2/2:MODEL_NOT_DEFINED
+setuuid KNX_0302002 5dca54d6-f33f-ba42-261e-1c495948160c5231
+attr KNX_0302002 IODev knxbridge
+attr KNX_0302002 room KNX
+define Haushalt_Zaehler OBIS /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A9077ZO9-if00-port0@9600,8,N,1 SML
+setuuid Haushalt_Zaehler 5dcdbeff-f33f-ba42-08df-7058221cd6edddc0
+attr Haushalt_Zaehler event-min-interval 10
+attr Haushalt_Zaehler icon measure_power_meter
+attr Haushalt_Zaehler interval 10
+attr Haushalt_Zaehler room System
+attr Haushalt_Zaehler stateFormat {sprintf(\
+"%.3fkW",\
+ReadingsVal("Haushalt_Zaehler","power",0)/1000,\
+\
+)}
+define LWZ_Zaehler OBIS /dev/serial/by-id/usb-FTDI_FT230X_Basic_UART_DN05XDOZ-if00-port0@9600,8,N,1 SML
+setuuid LWZ_Zaehler 5dcdc1a8-f33f-ba42-093b-47a615600a6f8cd7
+attr LWZ_Zaehler event-min-interval 10
+attr LWZ_Zaehler icon measure_power_meter
+attr LWZ_Zaehler interval 10
+attr LWZ_Zaehler room System
+attr LWZ_Zaehler stateFormat {sprintf(\
+"%.1f kW",\
+ReadingsVal("LWZ_Zaehler","power",0)/1000,\
+\
+)}
+define Haushalt_Strom SVG DBLogging:Haushalt_Strom:current
+setuuid Haushalt_Strom 5dcdc906-f33f-ba42-92f2-c23ab3f1c331c5a4
+attr Haushalt_Strom room System
+define LWZ_Strom SVG DBLogging:LWZ_Zaehler:current
+setuuid LWZ_Strom 5dcdce32-f33f-ba42-c01f-e866beab7328740f
+attr LWZ_Strom room System
+define LWZ THZ /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0@115200
+setuuid LWZ 5dcea1b7-f33f-ba42-7d75-7f2cd8470375766e
+attr LWZ devStateIcon opened:10px-kreis-gruen disconnected:10px-kreis-rot
+attr LWZ group LWZ
+attr LWZ interval_sGlobal 180
+attr LWZ interval_sHC1 180
+attr LWZ interval_sHistory 3600
+attr LWZ interval_sLast10errors 3600
+attr LWZ room System
+attr LWZ userReadings AussenTemp:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[1]},\
+VorlaufTemp:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[3]},\
+RuecklaufTemp:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[5]},\
+WWTemp:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[9]},\
+Flussrate:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[87]},\
+Druck:sGlobal.* {(split ' ',ReadingsVal("LWZ","sGlobal",0))[89]}
+define KNX_0202002 KNX 2/2/2:MODEL_NOT_DEFINED
+setuuid KNX_0202002 5dcfc8d5-f33f-ba42-5bd8-bb13cb7fd7333573
+attr KNX_0202002 IODev knxbridge
+attr KNX_0202002 room KNX
+define KNX_0202000 KNX 2/2/0:MODEL_NOT_DEFINED
+setuuid KNX_0202000 5dcfc8d5-f33f-ba42-7c99-4cba0f6532b2cedf
+attr KNX_0202000 IODev knxbridge
+attr KNX_0202000 room KNX
+define KNX_0201002 KNX 2/1/2:MODEL_NOT_DEFINED
+setuuid KNX_0201002 5dcfca1b-f33f-ba42-170b-b4b9ac3ade94f51d
+attr KNX_0201002 IODev knxbridge
+attr KNX_0201002 room KNX
+define Flur.Licht2 KNX 1/1/29:dpt1.001 1/4/29:dpt1.001
+setuuid Flur.Licht2 5dcfd82b-f33f-ba42-6c26-fdec23cf17ee468a
+attr Flur.Licht2 IODev knxbridge
+attr Flur.Licht2 alias Licht vor Haustür
+attr Flur.Licht2 genericDeviceType switch
+attr Flur.Licht2 group Licht
+attr Flur.Licht2 room KNX
+attr Flur.Licht2 setList on off
+attr Flur.Licht2 webCmd on:off
+define KNX_0104024 KNX 1/4/24:MODEL_NOT_DEFINED
+setuuid KNX_0104024 5dd17ebd-f33f-ba42-4726-e61e75666bfb823f
+attr KNX_0104024 IODev knxbridge
+attr KNX_0104024 room KNX
+define KNX_0101022 KNX 1/1/22:MODEL_NOT_DEFINED
+setuuid KNX_0101022 5dd25aac-f33f-ba42-8cf1-b2b1e6a90a7c65bc
+attr KNX_0101022 IODev knxbridge
+attr KNX_0101022 room KNX
+define KNX_0104021 KNX 1/4/21:MODEL_NOT_DEFINED
+setuuid KNX_0104021 5dd25aad-f33f-ba42-6e75-6d9f9067d5b08a16
+attr KNX_0104021 IODev knxbridge
+attr KNX_0104021 room KNX
+define KNX_0201000 KNX 2/1/0:MODEL_NOT_DEFINED
+setuuid KNX_0201000 5dd27a84-f33f-ba42-ab46-a4e98f3304ec5ff7
+attr KNX_0201000 IODev knxbridge
+attr KNX_0201000 room KNX
+define KNX_0302023 KNX 3/2/23:MODEL_NOT_DEFINED
+setuuid KNX_0302023 5dd2ce6f-f33f-ba42-ccb0-c0a21d66244b05ec
+attr KNX_0302023 IODev knxbridge
+attr KNX_0302023 room KNX
+define KNX_0104022 KNX 1/4/22:MODEL_NOT_DEFINED
+setuuid KNX_0104022 5dd400c6-f33f-ba42-9bc5-a71bb67d536521f0
+attr KNX_0104022 IODev knxbridge
+attr KNX_0104022 room KNX
+define KNX_0004001 KNX 0/4/1:MODEL_NOT_DEFINED
+setuuid KNX_0004001 5dd45134-f33f-ba42-6212-a84b98bdd102a0bc
+attr KNX_0004001 IODev knxbridge
+attr KNX_0004001 room KNX
+define KNX_0004000 KNX 0/4/0:MODEL_NOT_DEFINED
+setuuid KNX_0004000 5dd5583c-f33f-ba42-15e8-a221dc2df3fa58f7
+attr KNX_0004000 IODev knxbridge
+attr KNX_0004000 room KNX
+define ntest notify LWZ_Zaehler:power:.* set LWZStromKostenTag $EVENT
+setuuid ntest 5dda8536-f33f-ba42-b0c1-a5db1a5dfc749dff
+attr ntest room System
+define KNX_0302004 KNX 3/2/4:MODEL_NOT_DEFINED
+setuuid KNX_0302004 5ddff77c-f33f-ba42-67d9-8e9747e514e1cb94
+attr KNX_0302004 IODev knxbridge
+attr KNX_0302004 room KNX
+define KNX_0301008 KNX 3/1/8:MODEL_NOT_DEFINED
+setuuid KNX_0301008 5de97fa7-f33f-ba42-3dc8-f2ca43afd7a2a8da
+attr KNX_0301008 IODev knxbridge
+attr KNX_0301008 room KNX
+define KNX_0305008 KNX 3/5/8:MODEL_NOT_DEFINED
+setuuid KNX_0305008 5de97fd6-f33f-ba42-0e24-d25ce626305078af
+attr KNX_0305008 IODev knxbridge
+attr KNX_0305008 room KNX
+define KNX_0500000 KNX 5/0/0:MODEL_NOT_DEFINED
+setuuid KNX_0500000 5e0332f2-f33f-ba42-ca1e-8d4ad2a562315128
+attr KNX_0500000 IODev knxbridge
+attr KNX_0500000 room KNX
+define KNX_0500001 KNX 5/0/1:MODEL_NOT_DEFINED
+setuuid KNX_0500001 5e0332f8-f33f-ba42-070b-ea25b64a658c7a1b
+attr KNX_0500001 IODev knxbridge
+attr KNX_0500001 room KNX
+define rg_thz readingsGroup LWZ:<%temp_outside>,<Aussen>,AussenTemp \
+LWZ:<%sani_supply_temp@red>,<Vorlauf>,VorlaufTemp \
+LWZ:<%sani_return_temp@blue>,<Rücklauf>,RuecklaufTemp \
+LWZ:<%sani_boiler_temp@BD7800>,<Wasser>,WWTemp
+setuuid rg_thz 5e0f91b9-f33f-ba42-b262-b914e48aa2490c8b
+attr rg_thz group LWZ
+attr rg_thz room System
+attr rg_thz valueFormat {abzu => '%0.1f °C'}
+define KNX_0000000 KNX 0/0/0:MODEL_NOT_DEFINED
+setuuid KNX_0000000 5e249968-f33f-ba42-043e-772f26892a35dfc0
+attr KNX_0000000 IODev knxbridge
+attr KNX_0000000 room KNX
+define Kueche.Rollo_Spuele KNX 3/4/15:dpt5.001 3/5/15:dpt5.001 3/1/15:dpt1.008 3/2/15:dpt1.001
+setuuid Kueche.Rollo_Spuele 5e260204-f33f-ba42-78c6-f5fff682aa96e07f
+attr Kueche.Rollo_Spuele IODev knxbridge
+attr Kueche.Rollo_Spuele alias Spüle
+attr Kueche.Rollo_Spuele eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Kueche.Rollo_Spuele group Rolladen
+attr Kueche.Rollo_Spuele homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Kueche.Rollo_Spuele icon sani_water_tap
+attr Kueche.Rollo_Spuele room Homekit,Küche
+attr Kueche.Rollo_Spuele setList g1
+attr Kueche.Rollo_Spuele stateFormat getG2
+attr Kueche.Rollo_Spuele webCmd g1:Auf:Stopp:Ab
+attr Kueche.Rollo_Spuele widgetOverride g1:slider,0,5,100
+define Kueche.Rollo_Tuer KNX 3/4/16:dpt5.001 3/5/16:dpt5.001 3/1/16:dpt1.008 3/2/16:dpt1.001
+setuuid Kueche.Rollo_Tuer 5e275a29-f33f-ba42-5990-7f09f7454caedcc9
+attr Kueche.Rollo_Tuer IODev knxbridge
+attr Kueche.Rollo_Tuer alias Terassentür
+attr Kueche.Rollo_Tuer eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Kueche.Rollo_Tuer group Rolladen
+attr Kueche.Rollo_Tuer homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Kueche.Rollo_Tuer icon fts_door_right
+attr Kueche.Rollo_Tuer room Homekit,Küche
+attr Kueche.Rollo_Tuer setList g1
+attr Kueche.Rollo_Tuer stateFormat getG2
+attr Kueche.Rollo_Tuer webCmd g1:Auf:Stopp:Ab
+attr Kueche.Rollo_Tuer widgetOverride g1:slider,0,5,100
+define Kueche.Rollo_gross KNX 3/4/17:dpt5.001\
+3/5/17:dpt5.001\
+3/1/17:dpt1.008\
+3/2/17:dpt1.001
+setuuid Kueche.Rollo_gross 5e275a29-f33f-ba42-054f-0c139ff4a4668645
+attr Kueche.Rollo_gross IODev knxbridge
+attr Kueche.Rollo_gross alias Großes Fenster
+attr Kueche.Rollo_gross cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Kueche.Rollo_gross eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Kueche.Rollo_gross genericDeviceType blind
+attr Kueche.Rollo_gross group Rolladen
+attr Kueche.Rollo_gross homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Kueche.Rollo_gross icon fts_window_2w
+attr Kueche.Rollo_gross room Homekit,Küche
+attr Kueche.Rollo_gross setList g1
+attr Kueche.Rollo_gross stateFormat getG2
+attr Kueche.Rollo_gross webCmd g1:Auf:Stopp:Ab
+attr Kueche.Rollo_gross widgetOverride g1:slider,0,5,100
+define Kueche.Rollo_klein KNX 3/4/18:dpt5.001 3/5/18:dpt5.001 3/1/18:dpt1.008 3/2/18:dpt1.001
+setuuid Kueche.Rollo_klein 5e275a29-f33f-ba42-2daf-9c4716baec3e6b8f
+attr Kueche.Rollo_klein IODev knxbridge
+attr Kueche.Rollo_klein alias Kleines Fenster
+attr Kueche.Rollo_klein eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Kueche.Rollo_klein group Rolladen
+attr Kueche.Rollo_klein homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Kueche.Rollo_klein icon fts_window_1w
+attr Kueche.Rollo_klein room Homekit,Küche
+attr Kueche.Rollo_klein setList g1
+attr Kueche.Rollo_klein stateFormat getG2
+attr Kueche.Rollo_klein webCmd g1:Auf:Stopp:Ab
+attr Kueche.Rollo_klein widgetOverride g1:slider,0,5,100
+
+define KNX_0401001 KNX 4/1/1:MODEL_NOT_DEFINED
+setuuid KNX_0401001 5e275d09-f33f-ba42-169f-44c0e52d43ffdb45
+attr KNX_0401001 IODev knxbridge
+attr KNX_0401001 room KNX
+define KNX_0402001 KNX 4/2/1:MODEL_NOT_DEFINED
+setuuid KNX_0402001 5e275eda-f33f-ba42-332b-4ad76e80f312aa8c
+attr KNX_0402001 IODev knxbridge
+attr KNX_0402001 room KNX
+define Schlafzimmer.Heizung.plot SVG DBLogging:Schlafzimmer.Heizung.plot
+setuuid Schlafzimmer.Heizung.plot 5e276119-f33f-ba42-57c6-eea48234762cbcac
+attr Schlafzimmer.Heizung.plot room Schlafzimmer
+define KNX_0402005 KNX 4/2/5:MODEL_NOT_DEFINED
+setuuid KNX_0402005 5e276ce1-f33f-ba42-44c3-edec7aed2fb97eb4
+attr KNX_0402005 IODev knxbridge
+attr KNX_0402005 room KNX
+define KNX_0402002 KNX 4/2/2:MODEL_NOT_DEFINED
+setuuid KNX_0402002 5e276ce1-f33f-ba42-12bd-218e5f8bd44d95d5
+attr KNX_0402002 IODev knxbridge
+attr KNX_0402002 room KNX
+define KNX_0402003 KNX 4/2/3:MODEL_NOT_DEFINED
+setuuid KNX_0402003 5e276ce3-f33f-ba42-7a74-5df62f9e98451eb3
+attr KNX_0402003 IODev knxbridge
+attr KNX_0402003 room KNX
+define KNX_0402000 KNX 4/2/0:MODEL_NOT_DEFINED
+setuuid KNX_0402000 5e276ce3-f33f-ba42-1a37-3709916d110d63ea
+attr KNX_0402000 IODev knxbridge
+attr KNX_0402000 room KNX
+define KNX_0401003 KNX 4/1/3:MODEL_NOT_DEFINED
+setuuid KNX_0401003 5e276d33-f33f-ba42-79c9-77e076ae0ced5372
+attr KNX_0401003 IODev knxbridge
+attr KNX_0401003 room KNX
+define KNX_0401000 KNX 4/1/0:MODEL_NOT_DEFINED
+setuuid KNX_0401000 5e276d51-f33f-ba42-de5a-5ba2bed9c474c0d0
+attr KNX_0401000 IODev knxbridge
+attr KNX_0401000 room KNX
+define KNX_0401002 KNX 4/1/2:MODEL_NOT_DEFINED
+setuuid KNX_0401002 5e276d75-f33f-ba42-d7ec-c9117ab003975d9f
+attr KNX_0401002 IODev knxbridge
+attr KNX_0401002 room KNX
+define KNX_0401005 KNX 4/1/5:MODEL_NOT_DEFINED
+setuuid KNX_0401005 5e276de5-f33f-ba42-fe59-70bab47f98396702
+attr KNX_0401005 IODev knxbridge
+attr KNX_0401005 room KNX
+define KNX_0403005 KNX 4/3/5:MODEL_NOT_DEFINED
+setuuid KNX_0403005 5e2892ab-f33f-ba42-64ed-39c783d81f2e9715
+attr KNX_0403005 IODev knxbridge
+attr KNX_0403005 room KNX
+define KNX_0100000 KNX 1/0/0:MODEL_NOT_DEFINED
+setuuid KNX_0100000 5e289344-f33f-ba42-23f6-9edbefcbd74fdb0c
+attr KNX_0100000 IODev knxbridge
+attr KNX_0100000 room KNX
+define Konstantin.Heizung.plot SVG DBLogging:Konstantin.Heizung.plot
+setuuid Konstantin.Heizung.plot 5e2c9578-f33f-ba42-0ab3-f997430aa229e042
+attr Konstantin.Heizung.plot room Konstantin
+define Konstantin.Rollo_rechts KNX 3/4/3:dpt5.001\
+3/5/3:dpt5.001\
+3/1/3:dpt1.008\
+3/2/3:dpt1.001
+setuuid Konstantin.Rollo_rechts 5e2c990b-f33f-ba42-5779-cd769088587255db
+attr Konstantin.Rollo_rechts IODev knxbridge
+attr Konstantin.Rollo_rechts alias Rolladen rechts
+attr Konstantin.Rollo_rechts cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Konstantin.Rollo_rechts eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Konstantin.Rollo_rechts genericDeviceType blind
+attr Konstantin.Rollo_rechts group Rolladen
+attr Konstantin.Rollo_rechts homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Konstantin.Rollo_rechts room Homekit,Konstantin
+attr Konstantin.Rollo_rechts setList g1
+attr Konstantin.Rollo_rechts stateFormat getG2
+attr Konstantin.Rollo_rechts webCmd g1:Auf:Stopp:Ab
+attr Konstantin.Rollo_rechts widgetOverride g1:slider,0,5,100
+define Kind2.Heizung.plot SVG DBLogging:Valentin.Heizung.plot
+setuuid Kind2.Heizung.plot 5e2c9c17-f33f-ba42-1a65-746a39d6aa7fdaa8
+attr Kind2.Heizung.plot room Valentin
+define Valentin.Rolladen KNX 3/4/4:dpt5.001\
+3/5/4:dpt5.001\
+3/1/4:dpt1.008\
+3/2/4:dpt1.001
+setuuid Valentin.Rolladen 5e2c9de9-f33f-ba42-d656-5fd83a2baf09dc8b
+attr Valentin.Rolladen IODev knxbridge
+attr Valentin.Rolladen alias Rolladen
+attr Valentin.Rolladen cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Valentin.Rolladen eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Valentin.Rolladen genericDeviceType blind
+attr Valentin.Rolladen group Rolladen
+attr Valentin.Rolladen homebridgeMapping clear CurrentPosition=getG1,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Valentin.Rolladen room Homekit,Valentin
+attr Valentin.Rolladen setList g1
+attr Valentin.Rolladen stateFormat getG2
+attr Valentin.Rolladen webCmd g1:Auf:Stopp:Ab
+attr Valentin.Rolladen widgetOverride g1:slider,0,5,100
+define KNX_0002001 KNX 0/2/1:MODEL_NOT_DEFINED
+setuuid KNX_0002001 5e2cb9cf-f33f-ba42-e3d6-0bd05aafdda53fab
+attr KNX_0002001 IODev knxbridge
+attr KNX_0002001 room KNX
+define BWM_EG KNX 6/0/0:dpt1.002
+setuuid BWM_EG 5e2cbbfb-f33f-ba42-2868-b8b3e5a9db4c4075
+attr BWM_EG IODev knxbridge
+attr BWM_EG devStateIcon Aus:rc_PAUSE Automatik:rc_PLAY
+attr BWM_EG eventMap /true:Aus/false:Automatik
+attr BWM_EG group Bewegungsmelder
+attr BWM_EG room Flur EG
+attr BWM_EG webCmd Aus:Automatik
+define BWM_EG_Tag_Nacht notify (Kueche.Esstisch.Status|Kueche.Spuele.Status|Kueche.Herd.Status|Wohnzimmer.Esstisch.Status|Wohnzimmer.Beleuchtung.Status) {\
+my $r1 = ReadingsVal("Kueche.Esstisch.Status","getG1",0);;;;\
+my $r2 = ReadingsVal("Kueche.Spuele.Status","getG1",0);;;;\
+my $r3 = ReadingsVal("Kueche.Herd.Status","getG1",0);;;;\
+my $r4 = ReadingsVal("Wohnzimmer.Esstisch.Status","getG1",0);;;;\
+my $r5 = ReadingsVal("Wohnzimmer.Beleuchtung.Status","getG1",0);;;;\
+\
+if ($r1 eq "on" | $r2 eq "on" | $r3 eq "on" | $r4 eq "on" | $r5 eq "on")\
+{ fhem("set BWM_EG Aus");;;; }\
+else\
+{ fhem("set BWM_EG Automatik");;;; }\
+}
+setuuid BWM_EG_Tag_Nacht 5e2da0fb-f33f-ba42-c1d0-7d67170fb64bd9c3
+attr BWM_EG_Tag_Nacht group Bewegungsmelder
+attr BWM_EG_Tag_Nacht room Flur EG
+define Arbeitszimmer_Rollo_rechts KNX 3/4/8:dpt5.001\
+3/5/8:dpt5.001\
+3/1/8:dpt1.008\
+3/2/8:dpt1.001
+setuuid Arbeitszimmer_Rollo_rechts 5e2de3be-f33f-ba42-9c3c-23aa7ed4f340feb3
+attr Arbeitszimmer_Rollo_rechts IODev knxbridge
+attr Arbeitszimmer_Rollo_rechts alias Rolladen rechts
+attr Arbeitszimmer_Rollo_rechts cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Arbeitszimmer_Rollo_rechts eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Arbeitszimmer_Rollo_rechts genericDeviceType blind
+attr Arbeitszimmer_Rollo_rechts group Rolladen
+attr Arbeitszimmer_Rollo_rechts homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Arbeitszimmer_Rollo_rechts icon fts_window_2w
+attr Arbeitszimmer_Rollo_rechts room Arbeitszimmer,Homekit
+attr Arbeitszimmer_Rollo_rechts setList g1
+attr Arbeitszimmer_Rollo_rechts stateFormat getG2
+attr Arbeitszimmer_Rollo_rechts webCmd g1:Auf:Stopp:Ab
+attr Arbeitszimmer_Rollo_rechts widgetOverride g1:slider,0,5,100
+define BadEG_Rolladen KNX 3/4/9:dpt5.001\
+3/5/9:dpt5.001\
+3/1/9:dpt1.008\
+3/2/9:dpt1.001
+setuuid BadEG_Rolladen 5e2de4eb-f33f-ba42-32d8-9d00cc0178649cd9
+attr BadEG_Rolladen IODev knxbridge
+attr BadEG_Rolladen alias Rolladen
+attr BadEG_Rolladen cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr BadEG_Rolladen eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr BadEG_Rolladen genericDeviceType blind
+attr BadEG_Rolladen group Rolladen
+attr BadEG_Rolladen homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr BadEG_Rolladen icon fts_window_1w
+attr BadEG_Rolladen room Bad EG,Homekit
+attr BadEG_Rolladen setList g1
+attr BadEG_Rolladen stateFormat getG2
+attr BadEG_Rolladen webCmd g1:Auf:Stopp:Ab
+attr BadEG_Rolladen widgetOverride g1:slider,0,5,100
+define Wohnzimmer.Rolladen1 KNX 3/4/10:dpt5.001\
+3/5/10:dpt5.001\
+3/1/10:dpt1.008\
+3/2/10:dpt1.001
+setuuid Wohnzimmer.Rolladen1 5e2dedef-f33f-ba42-c04a-e3fde69824cf946d
+attr Wohnzimmer.Rolladen1 IODev knxbridge
+attr Wohnzimmer.Rolladen1 alias Rolladen 1
+attr Wohnzimmer.Rolladen1 cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Wohnzimmer.Rolladen1 eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Wohnzimmer.Rolladen1 genericDeviceType blind
+attr Wohnzimmer.Rolladen1 group Rolladen
+attr Wohnzimmer.Rolladen1 homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Wohnzimmer.Rolladen1 icon fts_window_2w
+attr Wohnzimmer.Rolladen1 room Homekit,Wohnzimmer
+attr Wohnzimmer.Rolladen1 setList g1
+attr Wohnzimmer.Rolladen1 stateFormat getG2
+attr Wohnzimmer.Rolladen1 webCmd g1:Auf:Stopp:Ab
+attr Wohnzimmer.Rolladen1 widgetOverride g1:slider,0,5,100
+define Wohnzimmer.Rolladen2 KNX 3/4/11:dpt5.001\
+3/5/11:dpt5.001\
+3/1/11:dpt1.008\
+3/2/11:dpt1.001
+setuuid Wohnzimmer.Rolladen2 5e2defe9-f33f-ba42-87d8-420a913ae63061f1
+attr Wohnzimmer.Rolladen2 IODev knxbridge
+attr Wohnzimmer.Rolladen2 alias Rolladen 2
+attr Wohnzimmer.Rolladen2 cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Wohnzimmer.Rolladen2 eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Wohnzimmer.Rolladen2 genericDeviceType blind
+attr Wohnzimmer.Rolladen2 group Rolladen
+attr Wohnzimmer.Rolladen2 homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Wohnzimmer.Rolladen2 icon fts_window_2w
+attr Wohnzimmer.Rolladen2 room Homekit,Wohnzimmer
+attr Wohnzimmer.Rolladen2 setList g1
+attr Wohnzimmer.Rolladen2 stateFormat getG2
+attr Wohnzimmer.Rolladen2 webCmd g1:Auf:Stopp:Ab
+attr Wohnzimmer.Rolladen2 widgetOverride g1:slider,0,5,100
+define Wohnzimmer.Rolladen3 KNX 3/4/12:dpt5.001\
+3/5/12:dpt5.001\
+3/1/12:dpt1.008\
+3/2/12:dpt1.001
+setuuid Wohnzimmer.Rolladen3 5e2df0cb-f33f-ba42-3782-0a9df05c6337dcb4
+attr Wohnzimmer.Rolladen3 IODev knxbridge
+attr Wohnzimmer.Rolladen3 alias Tür links
+attr Wohnzimmer.Rolladen3 cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Wohnzimmer.Rolladen3 eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Wohnzimmer.Rolladen3 genericDeviceType blind
+attr Wohnzimmer.Rolladen3 group Rolladen
+attr Wohnzimmer.Rolladen3 homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Wohnzimmer.Rolladen3 icon fts_door
+attr Wohnzimmer.Rolladen3 room Homekit,Wohnzimmer
+attr Wohnzimmer.Rolladen3 setList g1
+attr Wohnzimmer.Rolladen3 stateFormat getG2
+attr Wohnzimmer.Rolladen3 webCmd g1:Auf:Stopp:Ab
+attr Wohnzimmer.Rolladen3 widgetOverride g1:slider,0,5,100
+define Wohnzimmer.Rolladen4 KNX 3/4/13:dpt5.001\
+3/5/13:dpt5.001\
+3/1/13:dpt1.008\
+3/2/13:dpt1.001
+setuuid Wohnzimmer.Rolladen4 5e2df2a7-f33f-ba42-864c-b5fb3c40a74dec44
+attr Wohnzimmer.Rolladen4 IODev knxbridge
+attr Wohnzimmer.Rolladen4 alias Rolladen 3
+attr Wohnzimmer.Rolladen4 cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Wohnzimmer.Rolladen4 eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Wohnzimmer.Rolladen4 genericDeviceType blind
+attr Wohnzimmer.Rolladen4 group Rolladen
+attr Wohnzimmer.Rolladen4 homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Wohnzimmer.Rolladen4 icon fts_window_2w
+attr Wohnzimmer.Rolladen4 room Homekit,Wohnzimmer
+attr Wohnzimmer.Rolladen4 setList g1
+attr Wohnzimmer.Rolladen4 stateFormat getG2
+attr Wohnzimmer.Rolladen4 webCmd g1:Auf:Stopp:Ab
+attr Wohnzimmer.Rolladen4 widgetOverride g1:slider,0,5,100
+define Wohnzimmer.Rolladen5 KNX 3/4/14:dpt5.001\
+3/5/14:dpt5.001\
+3/1/14:dpt1.008\
+3/2/14:dpt1.001
+setuuid Wohnzimmer.Rolladen5 5e2df45d-f33f-ba42-32dd-5a6936045759fdbc
+attr Wohnzimmer.Rolladen5 IODev knxbridge
+attr Wohnzimmer.Rolladen5 alias Tür rechts
+attr Wohnzimmer.Rolladen5 cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr Wohnzimmer.Rolladen5 eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr Wohnzimmer.Rolladen5 genericDeviceType blind
+attr Wohnzimmer.Rolladen5 group Rolladen
+attr Wohnzimmer.Rolladen5 homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr Wohnzimmer.Rolladen5 icon fts_door_right
+attr Wohnzimmer.Rolladen5 room Homekit,Wohnzimmer
+attr Wohnzimmer.Rolladen5 setList g1
+attr Wohnzimmer.Rolladen5 stateFormat getG2
+attr Wohnzimmer.Rolladen5 webCmd g1:Auf:Stopp:Ab
+attr Wohnzimmer.Rolladen5 widgetOverride g1:slider,0,5,100
+define HWR.Rolladen KNX 3/4/19:dpt5.001\
+3/5/19:dpt5.001\
+3/1/19:dpt1.008\
+3/2/19:dpt1.001
+setuuid HWR.Rolladen 5e2df57d-f33f-ba42-10a6-7f5b31400c7be757
+attr HWR.Rolladen IODev knxbridge
+attr HWR.Rolladen alias Rolladen
+attr HWR.Rolladen cmdIcon Auf:fts_shutter_up Ab:fts_shutter_down Stopp:rc_STOP
+attr HWR.Rolladen eventMap /off g3:Auf/on g3:Ab/off g4:Stopp
+attr HWR.Rolladen genericDeviceType blind
+attr HWR.Rolladen group Rolladen
+attr HWR.Rolladen homebridgeMapping clear CurrentPosition=getG2,minValue=0,maxValue=100,minStep=1,invert=1 TargetPosition=value::getG1,minValue=0,maxValue=100,minStep=1,invert=1
+attr HWR.Rolladen icon fts_window_1w
+attr HWR.Rolladen room HWR
+attr HWR.Rolladen setList g1
+attr HWR.Rolladen stateFormat getG2
+attr HWR.Rolladen webCmd g1:Auf:Stopp:Ab
+attr HWR.Rolladen widgetOverride g1:slider,0,5,100
+define Bad_OG.Heizung.plot SVG DBLogging:Bad_OG.Heizung.plot
+setuuid Bad_OG.Heizung.plot 5e2df7fa-f33f-ba42-5804-4b5cad964ee48c7d
+attr Bad_OG.Heizung.plot room Bad OG
+define KNX_0601000 KNX 6/1/0:MODEL_NOT_DEFINED
+setuuid KNX_0601000 5e349432-f33f-ba42-9cf9-389806efc57aafb3
+attr KNX_0601000 IODev knxbridge
+attr KNX_0601000 room KNX
+define Flur_EG.BWM.Tag_Nacht KNX 6/1/0:dpt1.002
+setuuid Flur_EG.BWM.Tag_Nacht 5e3494dc-f33f-ba42-1820-74e9c02b45b159e7
+attr Flur_EG.BWM.Tag_Nacht IODev knxbridge
+attr Flur_EG.BWM.Tag_Nacht alias Tag/Nacht Betrieb
+attr Flur_EG.BWM.Tag_Nacht devStateIcon Tag:weather_sun Nacht:weather_night
+attr Flur_EG.BWM.Tag_Nacht eventMap /true:Tag/false:Nacht
+attr Flur_EG.BWM.Tag_Nacht group Bewegungsmelder
+attr Flur_EG.BWM.Tag_Nacht room Flur EG
+attr Flur_EG.BWM.Tag_Nacht webCmd Tag:Nacht
+define KNX_0602000 KNX 6/2/0:MODEL_NOT_DEFINED
+setuuid KNX_0602000 5e349983-f33f-ba42-b4d0-3b566e6ef78d1a3c
+attr KNX_0602000 IODev knxbridge
+attr KNX_0602000 room KNX
+define KNX_0101023 KNX 1/1/23:MODEL_NOT_DEFINED
+setuuid KNX_0101023 5e3c71b5-f33f-ba42-7a28-164403d045789448
+attr KNX_0101023 IODev knxbridge
+attr KNX_0101023 room KNX
+define Kueche_Esstisch_Status KNX 1/4/17:dpt1.001
+setuuid Kueche_Esstisch_Status 5e3c7e66-f33f-ba42-0b42-b8524778adac4087
+attr Kueche_Esstisch_Status IODev knxbridge
+attr Kueche_Esstisch_Status group Licht Status
+attr Kueche_Esstisch_Status room Flur EG
+define Kueche.Spots_Herd.Status KNX 1/4/23:dpt1.001
+setuuid Kueche.Spots_Herd.Status 5e3c7eb5-f33f-ba42-bf10-566fa9a21b7a0b62
+attr Kueche.Spots_Herd.Status IODev knxbridge
+attr Kueche.Spots_Herd.Status group Licht Status
+attr Kueche.Spots_Herd.Status room Flur EG
+define Kueche.Spuele.Status KNX 1/4/16:dpt1.001
+setuuid Kueche.Spuele.Status 5e3c7f14-f33f-ba42-04fb-2518c45da70e32cf
+attr Kueche.Spuele.Status IODev knxbridge
+attr Kueche.Spuele.Status group Licht Status
+attr Kueche.Spuele.Status room Flur EG
+define Wohnzimmer.Esstisch.Status KNX 1/4/15:dpt1.001
+setuuid Wohnzimmer.Esstisch.Status 5e3c804a-f33f-ba42-16ce-3bd365632d052bb8
+attr Wohnzimmer.Esstisch.Status IODev knxbridge
+attr Wohnzimmer.Esstisch.Status group Licht Status
+attr Wohnzimmer.Esstisch.Status room Flur EG
+define Wohnzimmer.Beleuchtung.Status KNX 1/4/25:dpt1.001
+setuuid Wohnzimmer.Beleuchtung.Status 5e3c8078-f33f-ba42-aaae-92b938aeef2cbea2
+attr Wohnzimmer.Beleuchtung.Status IODev knxbridge
+attr Wohnzimmer.Beleuchtung.Status group Licht Status
+attr Wohnzimmer.Beleuchtung.Status room Flur EG
+define KNX_0101024 KNX 1/1/24:MODEL_NOT_DEFINED
+setuuid KNX_0101024 5f467244-f33f-118a-584e-eed6f9b19ba0d6de
+attr KNX_0101024 IODev knxbridge
+attr KNX_0101024 room KNX
+define KNX_0101019 KNX 1/1/19:MODEL_NOT_DEFINED
+setuuid KNX_0101019 5f46e780-f33f-118a-54cb-93f0ad073177c529
+attr KNX_0101019 IODev knxbridge
+attr KNX_0101019 room KNX
+define KNX_0104028 KNX 1/4/28:MODEL_NOT_DEFINED
+setuuid KNX_0104028 5f484630-f33f-118a-d629-52fd723ba9b5eb15
+attr KNX_0104028 IODev knxbridge
+attr KNX_0104028 room KNX
+define KNX_0602001 KNX 6/2/1:MODEL_NOT_DEFINED
+setuuid KNX_0602001 5f5294a9-f33f-118a-ffa5-9866260ad2bcf184
+attr KNX_0602001 IODev knxbridge
+attr KNX_0602001 room KNX
+define telnetPort telnet 7072
+setuuid telnetPort 5f837369-f33f-d9f2-1f8b-b62c0570ffcaa406
+define DBLogging DbLog /opt/fhem/db.conf .*:.*
+setuuid DBLogging 5f83758c-f33f-d9f2-8b20-23b0360d3977d331
+attr DBLogging DbLogType Current/History
+attr DBLogging room System
+define DBLogging_Reopen at +*00:15:00 set DBLogging reopen
+setuuid DBLogging_Reopen 5f8376cc-f33f-d9f2-2c9c-0f16f02cb0eb031b
+attr DBLogging_Reopen room System
+define knxbridge KNXTUL 1.1.200
+setuuid knxbridge 5f933002-f33f-d9f2-920d-65689845edd3e11a
+attr knxbridge room System
+define test2 dummy
+setuuid test2 5fa05a62-f33f-d9f2-4bbd-7db5d2edeb1040b0
+attr test2 room System
+attr test2 stateFormat DbReadingsVal("Rep.Agent","LWZ_Zaehler:total_consumption_Ch1",$today."_00:00:00",0)
+define DBLogging_DbRep DbRep DBLogging
+setuuid DBLogging_DbRep 5fa05fa9-f33f-d9f2-afba-d61528c4cbb4b36f
+attr DBLogging_DbRep DbLogExclude .*
+attr DBLogging_DbRep DbLogInclude DumpRowsHistory
+attr DBLogging_DbRep dumpFilesKeep 3
+attr DBLogging_DbRep event-on-update-reading state,DumpRowsHistory
+attr DBLogging_DbRep optimizeTablesBeforeDump 1
+attr DBLogging_DbRep room System
+define Gaestezimmer.Heizung.plot SVG DBLogging:Gaestezimmer.Heizung.plot:CURRENT
+setuuid Gaestezimmer.Heizung.plot 5fa06290-f33f-d9f2-0d62-2f388f758e3b5405
+attr Gaestezimmer.Heizung.plot room Gästezimmer
+define Aussentemperatur SVG DBLogging:Aussentemperatur
+setuuid Aussentemperatur 5fa06904-f33f-d9f2-3c30-01c68d6405016521
+attr Aussentemperatur room System
