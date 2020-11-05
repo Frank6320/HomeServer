@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-    fhem:
+    fhemtest:
         restart: always
         ports:
             - "8083:8083"
@@ -14,7 +14,8 @@ services:
               published: 6720
               protocol: udp
               mode: host
-        image: fhem/fhem:latest
+#        image: fhem/fhem:latest
+        build: ./fhem
         volumes:
             - ./fhem/core/:/opt/fhem/
         devices:

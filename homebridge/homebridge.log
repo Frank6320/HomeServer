@@ -7351,3 +7351,487 @@ starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal
 [37m[11/4/2020, 8:37:31 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
   2020-11-04 20:37:34 caching: Treppenstufenbeleuchtung-state: off
 [37m[11/4/2020, 8:37:34 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-04 22:21:28 caching: Flur_EG.Licht-state: on
+[37m[11/4/2020, 10:21:28 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-04 22:21:54 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/4/2020, 10:21:54 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-04 22:24:25 caching: Wohnzimmer.Rolladen5-getG2: 100 %
+[37m[11/4/2020, 10:24:25 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:24:32 caching: Kueche.Rollo_gross-getG2: 100 %
+[37m[11/4/2020, 10:24:32 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:24:46 caching: Wohnzimmer.Rolladen3-getG2: 100 %
+[37m[11/4/2020, 10:24:46 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:24:55 caching: Wohnzimmer.Rolladen2-getG2: 100 %
+[37m[11/4/2020, 10:24:55 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:24:56 caching: Wohnzimmer.Rolladen4-getG2: 100 %
+[37m[11/4/2020, 10:24:56 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:24:56 caching: Wohnzimmer.Rolladen1-getG2: 100 %
+[37m[11/4/2020, 10:24:56 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-04 22:26:12 caching: Flur_EG.Licht-state: off
+[37m[11/4/2020, 10:26:12 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-04 22:27:36 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/4/2020, 10:27:36 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-04 22:32:29 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/4/2020, 10:32:29 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-04 22:34:28 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/4/2020, 10:34:28 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-04 22:38:10 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/4/2020, 10:38:10 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-04 22:40:10 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/4/2020, 10:40:10 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-04 22:44:45 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/4/2020, 10:44:45 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-04 22:46:45 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/4/2020, 10:46:45 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/4/2020, 10:58:44 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/4/2020, 10:58:52 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/4/2020, 11:00:26 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/4/2020, 11:30:07 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/4/2020, 11:30:55 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+  2020-11-05 05:14:53 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:14:53 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/5/2020, 5:15:45 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+  2020-11-05 05:16:53 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:16:53 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 05:52:03 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:52:03 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 05:54:03 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:54:03 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 05:54:22 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:54:22 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 05:56:22 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:56:22 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 05:56:31 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:56:31 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 05:56:31 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 5:56:31 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:00:02 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:00:02 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:00:22 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:00:22 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/5/2020, 6:00:36 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:01:00 AM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/5/2020, 6:01:00 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:01:00 AM] [39m[36m[FHEM] [39mBadEG_Deckenlicht: executing set cmd for On with value true
+[37m[11/5/2020, 6:01:00 AM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=set%20BadEG_Deckenlicht%20on&fwcsrf=csrf_244679125137775&XHR=1
+  2020-11-05 06:02:54 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:02:54 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:03:06 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:03:06 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/5/2020, 6:03:18 AM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+  2020-11-05 06:19:22 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:19:22 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:21:22 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:21:22 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:21:35 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:21:35 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:23:34 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:23:34 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:24:58 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:24:58 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:24:58 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:24:58 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:27:34 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:27:34 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:27:34 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:27:34 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:28:46 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:28:46 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:32:43 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:32:43 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:41:39 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:41:39 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 06:42:49 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:42:49 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 06:59:52 caching: Kueche.Rollo_gross-getG2: 0 %
+[37m[11/5/2020, 6:59:52 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 06:59:59 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:59:59 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:00:17 caching: Wohnzimmer.Rolladen4-getG2: 0 %
+[37m[11/5/2020, 7:00:17 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 07:00:17 caching: Wohnzimmer.Rolladen3-getG2: 0 %
+[37m[11/5/2020, 7:00:17 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 07:00:17 caching: Wohnzimmer.Rolladen5-getG2: 0 %
+[37m[11/5/2020, 7:00:17 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 07:00:17 caching: Wohnzimmer.Rolladen1-getG2: 0 %
+[37m[11/5/2020, 7:00:17 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 07:00:17 caching: Wohnzimmer.Rolladen2-getG2: 0 %
+[37m[11/5/2020, 7:00:17 AM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 100 (as number; from '0 %')
+  2020-11-05 07:00:54 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:00:54 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:02:59 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 7:02:59 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:03:16 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:03:16 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:03:56 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:03:56 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:05:56 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:05:56 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:06:08 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:06:08 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:08:07 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:08:07 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:09:40 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:09:40 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:11:39 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:11:39 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:13:06 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:13:06 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:15:06 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:15:06 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:15:45 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:15:45 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:17:44 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:17:44 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:17:57 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:17:57 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:19:56 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:19:56 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:23:45 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:23:45 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:25:44 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:25:44 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 07:27:45 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:27:45 AM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 07:31:15 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:31:15 AM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:07:19 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:07:19 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:07:19 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 5:07:19 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:09:32 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:09:32 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:10:31 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 5:10:31 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:15:27 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 5:15:27 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:15:30 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:15:30 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:19:48 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 5:19:48 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:20:07 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:20:07 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:32:08 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 5:32:08 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:32:08 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:32:08 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:33:14 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 5:33:14 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:33:42 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 5:33:42 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:36:01 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:36:01 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:37:50 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 5:37:50 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 17:38:05 caching: Kueche.Rollo_gross-getG2: 100 %
+[37m[11/5/2020, 5:38:05 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:38:31 caching: Wohnzimmer.Rolladen3-getG2: 100 %
+[37m[11/5/2020, 5:38:31 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:38:31 caching: Wohnzimmer.Rolladen1-getG2: 100 %
+[37m[11/5/2020, 5:38:31 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:38:31 caching: Wohnzimmer.Rolladen2-getG2: 100 %
+[37m[11/5/2020, 5:38:31 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:38:31 caching: Wohnzimmer.Rolladen4-getG2: 100 %
+[37m[11/5/2020, 5:38:31 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:38:32 caching: Wohnzimmer.Rolladen5-getG2: 100 %
+[37m[11/5/2020, 5:38:32 PM] [39m[36m[FHEM] [39m    caching: CurrentPosition: 0 (as number; from '100 %')
+  2020-11-05 17:39:47 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 5:39:47 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 17:39:55 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 5:39:55 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:07:24 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:07:24 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:07:24 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:07:24 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:09:31 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:09:31 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:12:28 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:12:28 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:15:15 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:15:15 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:15:44 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:15:44 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:17:49 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:17:49 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:18:16 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:18:16 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:18:53 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:18:53 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:21:48 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:21:48 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:22:54 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:22:54 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:24:54 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:24:54 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:25:59 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:25:59 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:28:34 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:28:34 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:30:25 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:30:25 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:30:50 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:30:50 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:31:20 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:31:20 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:35:16 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:35:16 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:35:21 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:35:21 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:35:32 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:35:32 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:43:43 caching: Konstantin.Licht-state: on
+[37m[11/5/2020, 6:43:43 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:49:58 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:49:58 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:51:32 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:51:32 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:51:38 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 6:51:38 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:51:40 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 6:51:40 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 18:52:57 caching: Konstantin.Licht-state: off
+[37m[11/5/2020, 6:52:57 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:53:52 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 6:53:52 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 18:54:19 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 6:54:19 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for Konstantin.Licht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Licht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for BadOG_Ambientelicht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for Kind2.Licht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for Flur_OG.Licht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39mquery: On for BadEG_Deckenlicht-state
+[37m[11/5/2020, 7:40:57 PM] [39m[36m[FHEM] [39m  cached: false (as boolean)
+  2020-11-05 19:41:01 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:41:01 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:41:23 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 7:41:23 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:43:28 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:43:28 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 19:44:43 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:44:43 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:48:00 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 7:48:00 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 19:48:29 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:48:29 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 19:48:51 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:48:51 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:49:03 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 7:49:03 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:51:34 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:51:34 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 19:51:55 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 7:51:55 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 19:53:47 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 7:53:47 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 19:53:59 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 7:53:59 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 20:11:23 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 8:11:23 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 20:11:24 caching: Treppenstufenbeleuchtung-state: on
+[37m[11/5/2020, 8:11:24 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 20:13:22 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 8:13:22 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 20:13:42 caching: Konstantin.Licht-state: on
+[37m[11/5/2020, 8:13:42 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 20:15:36 caching: Konstantin.Licht-state: off
+[37m[11/5/2020, 8:15:36 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 20:15:39 caching: Flur_EG.Licht-state: on
+[37m[11/5/2020, 8:15:39 PM] [39m[36m[FHEM] [39m    caching: On: true (as boolean; from 'on')
+  2020-11-05 20:19:25 caching: Flur_EG.Licht-state: off
+[37m[11/5/2020, 8:19:25 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+  2020-11-05 20:19:31 caching: Treppenstufenbeleuchtung-state: off
+[37m[11/5/2020, 8:19:31 PM] [39m[36m[FHEM] [39m    caching: On: false (as boolean; from 'off')
+longpoll ended, reconnect in: 200msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609664562
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 10000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609674571
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 15000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609689582
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 20000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609709597
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 25000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609734605
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609764613
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609794623
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609824635
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609854645
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604609884653
+[37m[11/5/2020, 9:58:04 PM] [39m[36m[FHEM] [39mChecking devices and attributes...
+[37m[11/5/2020, 9:58:04 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7BAttrVal(%22global%22,%22userattr%22,%22%22)%7D&fwcsrf=csrf_281949079244285&XHR=1
+[37m[11/5/2020, 9:58:04 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=jsonlist2%20TYPE=siri&fwcsrf=csrf_281949079244285&XHR=1
+[37m[11/5/2020, 9:58:04 PM] [39m[36m[FHEM] [39msiri device is siri
+[37m[11/5/2020, 9:58:04 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7B$defs%7Bsiri%7D-%3E%7B%22homebridge-fhem%20version%22%7D%20=%20%220.5.17%22%7D&fwcsrf=csrf_281949079244285&XHR=1
+longpoll ended, reconnect in: 200msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610187778
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 10000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610197783
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 15000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610212789
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 20000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610232801
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 25000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610257806
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610287813
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610317821
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610347829
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610377837
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610407845
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610437856
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610467864
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610497873
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610527878
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610557884
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610587888
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610617892
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610647895
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610677899
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610707903
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610737907
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610767911
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610797915
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 30000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604610827919
+[37m[11/5/2020, 10:13:47 PM] [39m[36m[FHEM] [39mChecking devices and attributes...
+[37m[11/5/2020, 10:13:47 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7BAttrVal(%22global%22,%22userattr%22,%22%22)%7D&fwcsrf=csrf_285884322343229&XHR=1
+[37m[11/5/2020, 10:13:47 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=jsonlist2%20TYPE=siri&fwcsrf=csrf_285884322343229&XHR=1
+[37m[11/5/2020, 10:13:47 PM] [39m[36m[FHEM] [39msiri device is siri
+[37m[11/5/2020, 10:13:47 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7B$defs%7Bsiri%7D-%3E%7B%22homebridge-fhem%20version%22%7D%20=%20%220.5.17%22%7D&fwcsrf=csrf_285884322343229&XHR=1
+longpoll ended, reconnect in: 200msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611682173
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 10000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611692181
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 15000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611707197
+[37m[11/5/2020, 10:28:27 PM] [39m[36m[FHEM] [39mChecking devices and attributes...
+[37m[11/5/2020, 10:28:27 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7BAttrVal(%22global%22,%22userattr%22,%22%22)%7D&fwcsrf=csrf_157790899900810&XHR=1
+[37m[11/5/2020, 10:28:27 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=jsonlist2%20TYPE=siri&fwcsrf=csrf_157790899900810&XHR=1
+[37m[11/5/2020, 10:28:27 PM] [39m[36m[FHEM] [39msiri device is siri
+[37m[11/5/2020, 10:28:27 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7B$defs%7Bsiri%7D-%3E%7B%22homebridge-fhem%20version%22%7D%20=%20%220.5.17%22%7D&fwcsrf=csrf_157790899900810&XHR=1
+longpoll ended, reconnect in: 200msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611740255
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 10000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611750260
+longpoll error: Error: connect ECONNREFUSED 127.0.0.1:8083, retry in: 15000msec
+starting longpoll: http://127.0.0.1:8083/fhem?XHR=1&inform=type=status;addglobal=1;filter=.*;since=1604603971.548;fmt=JSON&timestamp=1604611765268
+[37m[11/5/2020, 10:29:25 PM] [39m[36m[FHEM] [39mChecking devices and attributes...
+[37m[11/5/2020, 10:29:25 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7BAttrVal(%22global%22,%22userattr%22,%22%22)%7D&fwcsrf=csrf_293109710819907&XHR=1
+[37m[11/5/2020, 10:29:25 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=jsonlist2%20TYPE=siri&fwcsrf=csrf_293109710819907&XHR=1
+[37m[11/5/2020, 10:29:25 PM] [39m[36m[FHEM] [39msiri device is siri
+[37m[11/5/2020, 10:29:25 PM] [39m[36m[FHEM] [39m  executing: http://127.0.0.1:8083/fhem?cmd=%7B$defs%7Bsiri%7D-%3E%7B%22homebridge-fhem%20version%22%7D%20=%20%220.5.17%22%7D&fwcsrf=csrf_293109710819907&XHR=1

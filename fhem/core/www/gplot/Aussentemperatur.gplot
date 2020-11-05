@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2020-11-02 21:17:20
+# Created by FHEM/98_SVG.pm, 2020-11-05 21:34:23
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -7,7 +7,7 @@ set xlabel " "
 set title '<TL>'
 set ytics 
 set y2tics 
-set grid
+set grid ytics
 set ylabel "Humidity"
 set y2label "Temperature"
 
