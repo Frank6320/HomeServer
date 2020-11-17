@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2020-11-02 21:01:47
+# Created by FHEM/98_SVG.pm, 2020-11-14 20:02:48
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -11,6 +11,6 @@ set grid
 set ylabel "Humidity"
 set y2label "Temperature"
 
-#DBLogging Strom:getG1
+#DBLogging Zaehler.LWZ:total_consumption
 
 plot "<IN>" using 1:2 axes x1y1 title 'Strom' ls l0 lw 1 with lines

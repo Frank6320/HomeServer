@@ -1,4 +1,4 @@
-# $Id: 11_FHT.pm 18068 2018-12-27 17:08:46Z rudolfkoenig $
+# $Id: 11_FHT.pm 22720 2020-09-03 18:47:47Z rudolfkoenig $
 ##############################################################################
 #
 #     11_FHT.pm
@@ -240,6 +240,7 @@ FHT_Set($@)
       my $tmpList="on,off,".join(",",@list);
       $cmdList =~ s/-temp/-temp:$tmpList/g;     # FHEMWEB sugar
       $cmdList =~ s/(-from.|-to.)/$1:time/g;
+      $cmdList .= " date:noArg time:noArg";
       return "Unknown argument $cmd, choose one of $cmdList";
     }
 
@@ -372,6 +373,7 @@ FHT_Define($$)
      }
   }
 
+  $hash->{webCmd} = "desired-temp"; # Hint for FHEMWEB
   $modules{FHT}{defptr}{$a[2]} = $hash;
 
   #Log3 $a[0], 2, "Asking the FHT device $a[0]/$a[2] to send its data";
@@ -572,7 +574,7 @@ FHT_Parse($$)
 
   readingsBulkUpdate($def, $cmd, $val);
   if($cmd eq "measured-temp") {
-    readingsBulkUpdate($def, "state", "measured-temp: $val", 0);
+    readingsBulkUpdate($def, "state", "$val C", 0);
     readingsBulkUpdate($def, "temperature", $val); # For dewpoint
   }    
 

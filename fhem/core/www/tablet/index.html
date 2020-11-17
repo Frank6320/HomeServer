@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="js/fhem-tablet-ui.js" defer></script>
+    <title>FHEM-Tablet-UI</title>
+	<meta name="gridster_cols" content="10"/>
+	<meta name="gridster_rows" content="10"/>
+	
+</head>
+
+<body>
+    <div class="gridster">
+        <ul>
+			<li data-row="1" data-col="1" data-sizey="10" data-sizex="1">
+				<header>Nav</header>
+			</li>
+			<li data-row="1" data-col="2" data-sizey="4" data-sizex="5">
+				<header>Wetter</header>
+				<div class="sheet">
+					<div class="row">
+						<div class="cell">
+							<div data-type="label" class="darker bottom-space" >Heute</div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc0_weatherDayIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc0_tempMax" data-unit="°C"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" class="darker bottom-space" >Morgens</div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc0_weatherMorningIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc0_weatherMorning"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" class="darker bottom-space" >Nachmittag</div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc0_weatherEveningIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc0_weatherEvening"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" class="darker bottom-space" >Nacht</div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc0_weatherNightIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc0_weatherNight"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="cell">
+							<div data-type="label" data-device="WetterProplanta" data-get="fc1_date" class="darker bottom-space" data-substitution="toDate().eeee()"></div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc1_weatherDayIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc1_weatherDay"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc1_tempMax" data-unit="°C"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" data-device="WetterProplanta" data-get="fc2_date" class="darker bottom-space" data-substitution="toDate().eeee()"></div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc2_weatherDayIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc2_weatherDay"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc2_tempMax" data-unit="°C"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" data-device="WetterProplanta" data-get="fc3_date" class="darker bottom-space" data-substitution="toDate().eeee()"></div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc3_weatherDayIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc3_weatherDay"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc3_tempMax" data-unit="°C"></div>
+						</div>
+						<div class="cell">
+							<div data-type="label" data-device="WetterProplanta" data-get="fc4_date" class="darker bottom-space" data-substitution="toDate().eeee()"></div>
+							<div data-type="weather" data-device="WetterProplanta" data-get="fc4_weatherDayIcon" class="big"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc4_weatherDay"></div>
+							<div data-type="label" data-device="WetterProplanta" data-get="fc4_tempMax" data-unit="°C"></div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li data-row="5" data-col="2" data-sizey="6" data-sizex="5">
+				<header>ToDo</header>
+				<div data-type="weather" data-device="WetterProplanta" data-get="fc0_weatherDay" class="big"></div>
+			</li>
+			<li data-row="1" data-col="7" data-sizey="4" data-sizex="4">
+				<header>Home-Status</header>
+			</li>
+			<li data-row="5" data-col="7" data-sizey="4" data-sizex="4">
+				<header>Wichtiges</header>
+			</li>
+			<li data-row="9" data-col="7" data-sizey="2" data-sizex="4">
+				<header>Müll</header>
+			</li>
+		</ul>
+    </div>
+</body>
+</html>
